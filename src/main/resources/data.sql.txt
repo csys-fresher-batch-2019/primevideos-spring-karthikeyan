@@ -1,0 +1,49 @@
+insert into plans(plan_id,plan_amount,plan_duration,no_of_screens) values (121,199,30,1);
+insert into plans(plan_id,plan_amount,plan_duration,no_of_screens) values (122,299,30,2);
+insert into plans(plan_id,plan_amount,plan_duration,no_of_screens) values (123,399,90,1);
+--1
+
+
+insert into user_credits (customer_name,gender,DOB,age,mail_id,passwords,mobile_no) values('Rathnakumar','M',to_date('01-07-1989','dd-MM-yyyy'),31,'rathnakumar@gmail.com','asaodhasjdks',806342345);
+insert into user_credits (customer_name,gender,DOB,age,mail_id,passwords,mobile_no) values('Arjunkumar','M',to_date('01-09-1999','dd-MM-yyyy'),22,'arjunkumar@gmail.com','saodha23sjdks',9643423456);
+insert into user_credits (customer_name,gender,DOB,age,mail_id,passwords,mobile_no) values('Ramkumar','M',to_date('04-07-2000','dd-MM-yyyy'),21,'ramkumar@gmail.com','23saodhasjwedks',9673423456);
+insert into user_credits (customer_name,gender,DOB,age,mail_id,passwords,mobile_no) values('Akshykumar','M',to_date('29-01-1997','dd-MM-yyyy'),24,'akshykumar@gmail.com','saodhasjdks',6893423456);
+insert into user_credits (customer_name,gender,DOB,age,mail_id,passwords,mobile_no) values('Anadhan','M',to_date('01-01-1992','dd-MM-yyyy'),27,'anadhan@gmail.com','saodherrfdks',7887123456);
+--2
+
+insert into categorys (category_id,category_name) values (1,'TVShows');
+insert into categorys (category_id,category_name) values (2,'Movies');
+insert into categorys (category_id,category_name) values (3,'Kids');
+--3
+
+insert into prime_releases (prime_id,category_id,name_of_video,genre,audio_languages,subtitle_languages,director,release_date,prime_release_date,box_office_collection_millions,casting,description_of_video,imdb_rating,originals,tlikes,tdislikes,tviewer_rating) 
+values (prime_id_seq.nextval,2,'Avengers endgame','Fantasy','English','English','Russo Brothers',to_date('01-04-2019','dd-MM-YYYY'),to_date('01-11-2019','dd-MM-YYYY'),2789,'Robert Downy JR','Marvel studios biggest movie of the era',9,0,541,2,9);
+insert into prime_releases (prime_id,category_id,name_of_video,genre,audio_languages,subtitle_languages,director,release_date,prime_release_date,box_office_collection_millions,casting,description_of_video,imdb_rating,originals,tlikes,tdislikes,tviewer_rating) 
+values (prime_id_seq.nextval,2,'Avengers Civil War','Fantasy','English','English','Russo Brothers',to_date('27-04-2016','dd-MM-YYYY'),to_date('07-10-2017','dd-MM-YYYY'),1239,'Robert Downy JR','Fight between a two group of super hero who possess a wonderfull power',8,0,345,5,8);
+insert into prime_releases (prime_id,category_id,name_of_video,genre,audio_languages,subtitle_languages,director,release_date,prime_release_date,box_office_collection_millions,casting,description_of_video,imdb_rating,originals,tlikes,tdislikes,tviewer_rating) 
+values (prime_id_seq.nextval,2,'Mr.Bean','Comedy','English','English','Emmanuvel',to_date('12-09-1998','dd-MM-YYYY'),to_date('3-3-2012','dd-MM-YYYY'),60,'Rowen atkinson','A life a lonely man who enjoys every second of his single person life',8,1,456,87,7);
+--4
+
+insert into watch_lists (mail_id,prime_id,watched) values ('ramkumar@gmail.com',12321,1);
+update watch_lists set watched = watched + 1 where mail_id = 'ramkumar@gmail.com' and prime_id = 12321;
+insert into watch_lists(mail_id,prime_id,watch_later) values ('ramkumar@gmail.com',12321,1);
+--5
+
+
+declare
+BEGIN
+VIEWER_REVIEW('ramkumar@gmail.com',12321,8);
+END;
+--6
+
+declare
+BEGIN
+LIKES('ramkumar@gmail.com',12321);
+END;
+--7
+
+declare
+BEGIN
+DISLIKES('ramkumar@gmail.com',12321);
+END;
+--8

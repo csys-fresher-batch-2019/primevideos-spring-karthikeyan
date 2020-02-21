@@ -1,0 +1,5 @@
+drop table user_credits;
+drop table categorys;
+drop table plans;
+drop table prime_releases;
+drop table watch_lists;

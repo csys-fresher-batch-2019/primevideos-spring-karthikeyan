@@ -288,7 +288,7 @@ public class PrimeReleasesDAOImp implements PrimeReleasesDAO {
 				logger.info("PrimeId :" + pr.getPrimeId() + " Inserted\n");
 			}
 		} catch (SQLException e1) {
-			throw new DbException(InfoMessages.ADPLAN);
+			throw new DbException(InfoMessages.ADDVIDEO);
 
 		} catch (Exception e1) {
 			

@@ -66,7 +66,7 @@
             </head> 
 <body> 
 <%String moviename = (String)request.getParameter("movien");%>
-<jsp:include page= "search.jsp"></jsp:include>
+<jsp:include page= "nav.jsp"></jsp:include>
         <div class = "header1"> 
             <h2 style = "color:white;font-size:200%"> 
               	<p><%=moviename%></p>

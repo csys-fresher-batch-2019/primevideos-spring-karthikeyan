@@ -82,5 +82,6 @@ input.setCustomValidity('')
 }
 </script>
 </form>
+<a href = "LoginMailId.jsp"><button type="submit" class="button">Go to Login</button></a>
 </body>
 </html>

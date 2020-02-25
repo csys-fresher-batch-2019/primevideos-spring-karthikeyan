@@ -42,8 +42,9 @@ body {
 </head>
 </style>
 <body style = "text-align:center">
- <div class = "gfg">PrimeVideos</div> 
-       <div class = "geeks">Destination For Entertainment</div> 
+<jsp:include page= "nav.jsp"></jsp:include>
+<br>
+<br>
 			<div class = "gfg1">Prime Videos Password Assitance</div> 
 <form action="ForgetPasswordServlet">
 <br/>
@@ -51,6 +52,7 @@ body {
 
 EmailId : <input type = "email" name = "email"
 placeholder  = "EmailId" required autofocus/>
+<br>
 <br>
 <button type="submit" class="button">Send OTP</button>
 <br>

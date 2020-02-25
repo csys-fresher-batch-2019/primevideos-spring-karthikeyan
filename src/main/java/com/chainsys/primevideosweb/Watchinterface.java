@@ -40,6 +40,10 @@ public class Watchinterface extends HttpServlet {
 				{
 					response.sendRedirect("Video.jsp?movieid="+prime+"&movien="+moviename);
 				}
+				else
+				{					
+					response.sendRedirect("ViewMoviesServlet?id="+prime);
+				}
 			} catch (DbException e) {
 				
 				e.printStackTrace();

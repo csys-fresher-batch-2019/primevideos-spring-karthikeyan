@@ -33,8 +33,8 @@ public class TestCSV {
 			String g = s[6];
 			String h = s[8];
 			String i = s[9];
-			String j = s[10];
-			String k = s[11];
+			/*String j = s[10];
+			String k = s[11];*/
 			String l = s[12];
 			String m = s[13];
 			PrimeReleases as = new PrimeReleases();
@@ -51,11 +51,11 @@ public class TestCSV {
 			as.setBoxofficecollectionuinmillions(hh);
 			int imdb = Integer.parseInt(i);
 			as.setImdbRating(imdb);		
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yy");      
+			/*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yy");      
 			LocalDate r = LocalDate.parse(j, formatter);
 	        as.setReleaseDate(r);
 	        LocalDate rr = LocalDate.parse(k, formatter);
-			as.setPrimereleaseDate(rr);
+			as.setPrimereleaseDate(rr);*/
 			as.setAudioLanguages(l);
 			boolean or = false;
 			if(m == "1")

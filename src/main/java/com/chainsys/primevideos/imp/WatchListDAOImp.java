@@ -84,16 +84,22 @@ public class WatchListDAOImp implements WatchListDAO {
 	
 
 	public boolean updateWatched(String mailId, int primeId,int decide) throws DbException {
-		boolean row = false;
+		boolean row;
 		if(watched(mailId,primeId))
 		{
 		try(Connection con = TestConnection.getConnection();
 				CallableStatement cstmt = con.prepareCall("{call INCREMENT_WATCHED_BY_ONE(?,?,?)}");)
 		        {
-				cstmt.setInt(3, decide);
+			System.out.println("hello123");
 				cstmt.setString(1, mailId);
 				cstmt.setInt(2, primeId);
+				cstmt.setInt(3, decide);
 				row = cstmt.execute();
+				if(row==false)
+				{
+				System.out.println("Enjoy PRIME VIDEOS");
+				return true;
+				}
 				}
 				catch (SQLException e1) 
 				{
@@ -103,11 +109,7 @@ public class WatchListDAOImp implements WatchListDAO {
 				{
 						throw new DbException(InfoMessages.CONNECTION);
 				}
-			if(row == true)
-			{
-			System.out.println("Enjoy PRIME VIDEOS");
-			return row;
-			}
+			
 	}
 	else
 	{
@@ -142,7 +144,7 @@ public class WatchListDAOImp implements WatchListDAO {
 				throw new DbException(InfoMessages.CONNECTION);
 			}
 		}
-		return row;
+		return false;
 	}
 
 	public  ArrayList<PrimeReleases> select(String MailId) throws DbException {

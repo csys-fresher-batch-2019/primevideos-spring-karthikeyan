@@ -87,8 +87,8 @@ public class PrimeReleasesDAOImp implements PrimeReleasesDAO {
 		String g = rs.getString(7);
 		String h = rs.getString(8);
 		String i = rs.getString(9);
-		Date j = rs.getDate(10);
-		Date k = rs.getDate(11);
+		/*Date j = rs.getDate(10);
+		Date k = rs.getDate(11);*/
 		int m = rs.getInt(12);
 		String n = rs.getString(13);
 		String o = rs.getString(14);
@@ -103,8 +103,8 @@ public class PrimeReleasesDAOImp implements PrimeReleasesDAO {
 		ad.setAudioLanguages(g);
 		ad.setSubtitleLanguages(h);
 		ad.setDirector(i);		
-		ad.setReleaseDate(j.toLocalDate());
-		ad.setPrimereleaseDate(k.toLocalDate());
+		/*ad.setReleaseDate(j.toLocalDate());
+		ad.setPrimereleaseDate(k.toLocalDate());*/
 		ad.setBoxofficecollectionuinmillions(m);
 		ad.setCasting(n);
 		ad.setDescriptionofvideo(o);
@@ -270,19 +270,20 @@ public class PrimeReleasesDAOImp implements PrimeReleasesDAO {
 		
 	}
 	public void insertMovies(PrimeReleases pr) throws DbException {
-		String sql = "insert into prime_releases(prime_id,name_of_video,category_id,genre,audio_languages,director,casting,description_of_video,imdb_rating,originals) values (?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into prime_releases(prime_id,category_id,name_of_video,genre,audio_languages,director,box_office_collection_millions,casting,description_of_video,imdb_rating,originals) values (?,?,?,?,?,?,?,?,?,?,?)";
 		try (Connection con = TestConnection.getConnection(); 
 			PreparedStatement pst = con.prepareStatement(sql);) {
 			pst.setInt(1,pr.getPrimeId());
-			pst.setString(2, pr.getNameofVideo());
-			pst.setInt(3, pr.getCategoryId());
+			pst.setInt(2, pr.getCategoryId());
+			pst.setString(3, pr.getNameofVideo());			
 			pst.setString(4, pr.getGenre());
 			pst.setString(5,pr.getAudioLanguages());
 			pst.setString(6, pr.getDirector());
-			pst.setString(7,pr.getCasting());
-			pst.setString(8,pr.getDescriptionofvideo());
-			pst.setInt(9,pr.getImdbRating());
-			pst.setBoolean(10,pr.isOriginals());
+			pst.setInt(7, pr.getBoxofficecollectionuinmillions());
+			pst.setString(8,pr.getCasting());
+			pst.setString(9,pr.getDescriptionofvideo());
+			pst.setInt(10,pr.getImdbRating());
+			pst.setBoolean(11,pr.isOriginals());
 			int row = pst.executeUpdate();
 			if (row == 1) {
 				logger.info("PrimeId :" + pr.getPrimeId() + " Inserted\n");

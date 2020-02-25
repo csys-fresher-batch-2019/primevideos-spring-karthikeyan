@@ -26,7 +26,8 @@ public class ViewMoviesServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		String id = request.getParameter("id");
-		out.println(id);		
+		System.out.println("hello");
+		System.out.println(id);		
 		int id1 = Integer.parseInt(id);
 		PrimeReleasesDAOImp prime = new PrimeReleasesDAOImp();		
 		ArrayList<PrimeReleases> list1;

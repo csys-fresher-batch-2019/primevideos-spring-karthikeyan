@@ -66,19 +66,7 @@
             </head> 
 <body> 
 <%String moviename = (String)request.getParameter("movien");%>
-
-<div class = "header"> 
-            <h2 style = "color:white;font-size:200%"> 
-                Prime Videos 
-            </h2> 
-        </div> 
-          
-        <div class = "nav_menu"> 
-            <a href = "#"><button class="btn"><i class="fa fa-home"></i> Home</button></a> 
-            <a href = "search.jsp"><button class="btn"><i class="fa fa-search"></i>Search</button></a> 
-        	<a href = "WatchedListServlet"><button class="btn">Watched Movies</button></a>
-        	<a href = "WatchLaterServlet"><button class="btn">WatchLater Movies</button></a> 
-        	<a href = "plan.jsp"><button class = "btn">Prime Plans</button></a></div>
+<jsp:include page= "search.jsp"></jsp:include>
         <div class = "header1"> 
             <h2 style = "color:white;font-size:200%"> 
               	<p><%=moviename%></p>

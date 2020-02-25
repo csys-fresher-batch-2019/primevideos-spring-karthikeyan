@@ -43,6 +43,7 @@
 
 </head>
 <body>
+<jsp:include page= "nav.jsp"></jsp:include>
 	<%
 		AmazonPlanImplements as =  new AmazonPlanImplements();
 		ArrayList<Plan> list = as.list();

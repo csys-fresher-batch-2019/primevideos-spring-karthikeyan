@@ -44,13 +44,14 @@ body {
        <div class = "geeks">Destination For Entertainment</div> 
 			<div class = "gfg">Password Assistance</div> 
 <form action="ChangePasswordServlet" method ="post">
+
 <label for="npass">Password</label>
 <br>
-<input type="password" name="npass" id="npass" size = 25 placeholder  = "Password(Must Contain 8 Letter)" required/>
+<input type="password" name="npass" id="npass" size = 25 placeholder  = "Password" pattern=".{8,}" title="Must contain at least 8 or more characters" required/>
 <br/>
 <label for="npass">Conform Password</label>
 <br>
-<input type="password" name="npass" id="npass" size = 25 placeholder  = "Conform Password(Must Contain 8 Letter)" required oninput="check(this)"/>
+<input type="password" name="npass" id="npass" size = 25 placeholder  = "Conform Password" pattern=".{8,}" title="Must contain at least 8 or more characters" required oninput="check(this)"/>
 <br>
 <br>
 <input type="submit" value="Change Password" class="btn btn-success"/>

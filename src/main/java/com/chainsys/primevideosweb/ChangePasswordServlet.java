@@ -36,6 +36,7 @@ public class ChangePasswordServlet extends HttpServlet {
 				}
 			} catch (DbException e) {
 				e.printStackTrace();
+				response.sendRedirect("ChangePassword.jsp");
 				
 			}
 		}

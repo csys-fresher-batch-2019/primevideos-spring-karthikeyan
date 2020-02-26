@@ -16,7 +16,7 @@ public class OTPassword extends HttpServlet {
         super();
     }
     
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String OTP1 = (String) request.getParameter("otpuserpass");
 		int Otp1 = Integer.parseInt(OTP1);
 		HttpSession session = request.getSession();

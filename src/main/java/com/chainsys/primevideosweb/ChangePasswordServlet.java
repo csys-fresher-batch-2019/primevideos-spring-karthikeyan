@@ -20,19 +20,23 @@ public class ChangePasswordServlet extends HttpServlet {
     public ChangePasswordServlet() {
         super();
     }
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserCreditsImp user = new UserCreditsImp();
 		HttpSession session = request.getSession();
 		String mail = (String) session.getAttribute("Usermail");
-		String password = (String) session.getAttribute("npass");
+		System.out.println(mail);
+		String password = request.getParameter("npass");
+		System.out.println(password);
 			try {
-				if(user.verifyOTPAndUpdatePassword(mail, password))
+				boolean a = user.verifyOTPAndUpdatePassword(mail, password);
+				if(a == true)
 				{
-					RequestDispatcher d = request.getRequestDispatcher("search.jsp");
+					RequestDispatcher d = request.getRequestDispatcher("LoginMailId.jsp");
 					d.forward(request, response);
 				}
 			} catch (DbException e) {
 				e.printStackTrace();
+				
 			}
 		}
 	

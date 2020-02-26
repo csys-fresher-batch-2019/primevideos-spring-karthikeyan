@@ -51,7 +51,7 @@ body {
 			 <% String mail = (String) session.getAttribute("Usermail");%>
 			<h2>Enter the One-Time Password Send To Your MailID </h2> 
 			 <div class = "gfg1"><center><%=mail%></center></div>
-<form action="OTPassword">
+<form action="OTPassword" method ="post">
 <label for="otp">Enter OTP</label>
 <br/>
 <input type = "OTP" name = "otpuserpass"

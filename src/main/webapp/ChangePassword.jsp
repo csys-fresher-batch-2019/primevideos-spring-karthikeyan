@@ -43,19 +43,20 @@ body {
  <div class = "gfg">PrimeVideos</div> 
        <div class = "geeks">Destination For Entertainment</div> 
 			<div class = "gfg">Password Assistance</div> 
-<form action="LoginMailId.jsp">
+<form action="ChangePasswordServlet" method ="post">
 <label for="npass">Password</label>
 <br>
-<input type="password" name="npass" id="npass" size = 25 placeholder  = "Password" required/>
+<input type="password" name="npass" id="npass" size = 25 placeholder  = "Password(Must Contain 8 Letter)" required/>
 <br/>
 <label for="npass">Conform Password</label>
 <br>
-<input type="password" name="npass" id="npass" size = 25 placeholder  = "Conform Password" required oninput="check(this)"/>
+<input type="password" name="npass" id="npass" size = 25 placeholder  = "Conform Password(Must Contain 8 Letter)" required oninput="check(this)"/>
 <br>
 <br>
 <input type="submit" value="Change Password" class="btn btn-success"/>
 <br>
 <br>
+
 <script type="text/javascript">
 
 function check(input) {

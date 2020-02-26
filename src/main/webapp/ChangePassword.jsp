@@ -43,7 +43,7 @@ body {
  <div class = "gfg">PrimeVideos</div> 
        <div class = "geeks">Destination For Entertainment</div> 
 			<div class = "gfg">Password Assistance</div> 
-<form action="SignUpServlet">
+<form action="LoginMailId.jsp">
 <label for="npass">Password</label>
 <br>
 <input type="password" name="npass" id="npass" size = 25 placeholder  = "Password" required/>

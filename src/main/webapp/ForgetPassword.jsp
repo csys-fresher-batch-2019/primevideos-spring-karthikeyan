@@ -42,10 +42,10 @@ body {
 </head>
 </style>
 <body style = "text-align:center">
-<jsp:include page= "nav.jsp"></jsp:include>
+ <div class = "gfg">PrimeVideos</div> 
+       <div class = "geeks">Destination For Entertainment</div> 
 <br>
-<br>
-			<div class = "gfg1">Prime Videos Password Assitance</div> 
+			<div class = "gfg1">PrimeVideos Password Assitance</div> 
 <form action="ForgetPasswordServlet">
 <br/>
 

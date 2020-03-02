@@ -11,13 +11,17 @@ import javax.servlet.http.HttpSession;
 
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.imp.WatchListDAOImp;
+
 @WebServlet("/Watchinterface")
 public class Watchinterface extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public Watchinterface() {
-        super();
-    }
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	public Watchinterface() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String decides = (String) request.getParameter("decide");
 		int decide = Integer.parseInt(decides);
@@ -30,44 +34,35 @@ public class Watchinterface extends HttpServlet {
 		System.out.println(moviename);
 		int primeid = Integer.parseInt(prime);
 		WatchListDAOImp as = new WatchListDAOImp();
-		if (decide==1)
-		{
-			
+		if (decide == 1) {
+
 			try {
-				boolean result = as.updateWatched(mailid, primeid,1);
-				System.out.println("Result:" +result);
-				if (result)
-				{
-					response.sendRedirect("Video.jsp?movieid="+prime+"&movien="+moviename);
-				}
-				else
-				{					
-					response.sendRedirect("ViewMoviesServlet?id="+prime);
+				boolean result = as.updateWatched(mailid, primeid, 1);
+				System.out.println("Result:" + result);
+				if (result) {
+					response.sendRedirect("Video.jsp?movieid=" + prime + "&movien=" + moviename);
+				} else {
+					response.sendRedirect("ViewMoviesServlet?id=" + prime);
 				}
 			} catch (DbException e) {
-				
+
 				e.printStackTrace();
 			}
-			
-		}
-		else if(decide ==2)
-		{
-			
+
+		} else if (decide == 2) {
+
 			try {
-				boolean result = as.updateWatched(mailid, primeid,2);
-				System.out.println("Result:" +result);
-				if (result)
-				{
-					response.sendRedirect("ViewMoviesServlet?id="+prime);
-				}
-				else
-				{
-					response.sendRedirect("ViewMoviesServlet?id="+prime);
+				boolean result = as.updateWatched(mailid, primeid, 2);
+				System.out.println("Result:" + result);
+				if (result) {
+					response.sendRedirect("ViewMoviesServlet?id=" + prime);
+				} else {
+					response.sendRedirect("ViewMoviesServlet?id=" + prime);
 				}
 			} catch (DbException e) {
-				
+
 				e.printStackTrace();
-			}	
+			}
 		}
 	}
 

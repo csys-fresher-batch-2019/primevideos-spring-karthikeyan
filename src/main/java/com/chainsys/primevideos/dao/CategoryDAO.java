@@ -3,7 +3,7 @@ package com.chainsys.primevideos.dao;
 import java.util.ArrayList;
 
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.method.Categorys;
+import com.chainsys.primevideos.model.Categorys;
 
 public interface CategoryDAO {
 

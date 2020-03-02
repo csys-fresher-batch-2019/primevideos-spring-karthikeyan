@@ -11,7 +11,7 @@ import com.chainsys.primevideos.dao.CategoryDAO;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
 import com.chainsys.primevideos.logger.Logger;
-import com.chainsys.primevideos.method.Categorys;
+import com.chainsys.primevideos.model.Categorys;
 
 public class AmazonCategorysImp implements CategoryDAO {
 	Logger logger = Logger.getInstance();

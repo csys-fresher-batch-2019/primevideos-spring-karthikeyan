@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import com.chainsys.primevideos.imp.AmazonPlanImplements;
 import com.chainsys.primevideos.logger.Logger;
-import com.chainsys.primevideos.method.Plan;
+import com.chainsys.primevideos.model.Plan;
 
 public class TestExportPlan {
 	static Logger logger = new Logger();

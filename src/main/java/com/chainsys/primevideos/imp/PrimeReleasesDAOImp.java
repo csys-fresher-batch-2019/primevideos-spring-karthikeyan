@@ -13,7 +13,7 @@ import com.chainsys.primevideos.dao.PrimeReleasesDAO;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
 import com.chainsys.primevideos.logger.Logger;
-import com.chainsys.primevideos.method.PrimeReleases;
+import com.chainsys.primevideos.model.PrimeReleases;
 
 public class PrimeReleasesDAOImp implements PrimeReleasesDAO {
 	static Logger logger = Logger.getInstance();

@@ -3,7 +3,7 @@ package com.chainsys.primevideos.dao;
 import java.util.List;
 
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.method.UserCredits;
+import com.chainsys.primevideos.model.UserCredits;
 
 public interface UserCreditsDAO {
 

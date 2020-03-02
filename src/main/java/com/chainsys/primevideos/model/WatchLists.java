@@ -1,4 +1,4 @@
-package com.chainsys.primevideos.method;
+package com.chainsys.primevideos.model;
 
 import java.time.LocalDate;
 

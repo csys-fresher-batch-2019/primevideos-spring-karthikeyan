@@ -1,4 +1,4 @@
-<%@page import="com.chainsys.primevideos.method.PrimeReleases"%>
+<%@page import="com.chainsys.primevideos.model.PrimeReleases"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList"%>
@@ -7,34 +7,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style type="text/css">
- .gfg { 
-                font-size:40px; 
-                color:green; 
-                font-weight:bold; 
-                text-align:center; 
-            } 
-            
+.gfg {
+	font-size: 40px;
+	color: green;
+	font-weight: bold;
+	text-align: center;
+}
+
 #customers {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 #customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
+	border: 1px solid #ddd;
+	padding: 8px;
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
 
-#customers tr:hover {background-color: #ddd;}
+#customers tr:hover {
+	background-color: #ddd;
+}
 
 #customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: white;
 }
 </style>
 
@@ -46,32 +50,37 @@
 	<%
 		ArrayList<PrimeReleases> list = (ArrayList) request.getAttribute("movies");
 	%>
-<div class = "gfg" ><centre>Movies</centre></div>	
+	<div class="gfg">
+		<centre>Movies</centre>
+	</div>
 
-	<center><table id = customers>
-		<thead>
-			<tr>
-				<th>S.No</th>
-				<th>Name of Video</th>
-				<th>Prime Id</th>
-			</tr>
-			<%
-				int i = 1;
-				for (PrimeReleases obj : list) {
-			%>
-			<tr>
-				<td><%=i++%></td>
-				<td><%=obj.getNameofVideo()%></td>
-				<td><%=obj.getPrimeId()%></td>
-			</tr>
+	<center>
+		<table id=customers>
+			<thead>
+				<tr>
+					<th>S.No</th>
+					<th>Name of Video</th>
+					<th>Prime Id</th>
+				</tr>
+				<%
+					int i = 1;
+					for (PrimeReleases obj : list) {
+				%>
+				<tr>
+					<td><%=i++%></td>
+					<td><%=obj.getNameofVideo()%></td>
+					<td><%=obj.getPrimeId()%></td>
+				</tr>
 
 
-			<%
-				}
-			%>
-		</thead>
-	</table></center></br>
+				<%
+					}
+				%>
+			</thead>
+		</table>
+	</center>
+	</br>
 
-</form>
+	</form>
 </body>
 </html>

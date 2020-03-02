@@ -10,7 +10,7 @@ import java.util.List;
 
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.imp.PrimeReleasesDAOImp;
-import com.chainsys.primevideos.method.PrimeReleases;
+import com.chainsys.primevideos.model.PrimeReleases;
 
 public class TestCSV {
 

@@ -13,7 +13,7 @@ import com.chainsys.primevideos.dao.WatchListDAO;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
 import com.chainsys.primevideos.logger.Logger;
-import com.chainsys.primevideos.method.PrimeReleases;
+import com.chainsys.primevideos.model.PrimeReleases;
 public class WatchListDAOImp implements WatchListDAO {
 	static Logger logger = Logger.getInstance();
 

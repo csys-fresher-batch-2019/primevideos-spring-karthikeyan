@@ -13,10 +13,13 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+
+import org.springframework.stereotype.Component;
+
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
 import com.chainsys.primevideos.logger.Logger;
-
+@Component
  public class MailUtil1
 {  
 	 private MailUtil1() {

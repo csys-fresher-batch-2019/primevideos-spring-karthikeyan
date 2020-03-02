@@ -2,6 +2,9 @@ package com.chainsys.primevideos.connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.TimeZone;
+import org.springframework.stereotype.Component;
+
+@Component
 public class TestConnection {
 	private TestConnection() {
 	}

@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.imp.PrimeReleasesDAOImp;
-import com.chainsys.primevideos.model.PrimeReleases;
+import org.springframework.stereotype.Component;
 
+import com.chainsys.primevideos.dao.imp.PrimeReleasesDAOImp;
+import com.chainsys.primevideos.exception.DbException;
+import com.chainsys.primevideos.model.PrimeReleases;
+@Component
 public class TestCSV {
 
 

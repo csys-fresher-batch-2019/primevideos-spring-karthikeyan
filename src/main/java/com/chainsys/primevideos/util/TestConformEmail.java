@@ -2,9 +2,11 @@ package com.chainsys.primevideos.util;
 
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.logger.Logger;
-
+@Component
 public class TestConformEmail 
 {
 	private TestConformEmail() {

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.chainsys.primevideos.dao.imp.AmazonPlanImplements;
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.imp.AmazonPlanImplements;
 import com.chainsys.primevideos.model.Plan;
 
 @RestController

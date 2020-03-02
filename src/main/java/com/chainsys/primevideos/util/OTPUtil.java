@@ -1,14 +1,15 @@
 package com.chainsys.primevideos.util;
 
 import java.security.SecureRandom;
-
+import org.springframework.stereotype.Component;
+@Component
 public class OTPUtil {
 	
-	private OTPUtil() {
+	/*public OTPUtil() {
 	    throw new IllegalStateException("Utility class");
-	  }
+	  }*/
 	
-	private static final SecureRandom rand = new SecureRandom();
+	public static final SecureRandom rand = new SecureRandom();
 	public static int getOTP() {
 	
         return rand.nextInt(1000000); 

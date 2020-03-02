@@ -6,10 +6,12 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
-import com.chainsys.primevideos.imp.AmazonPlanImplements;
+import org.springframework.stereotype.Component;
+
+import com.chainsys.primevideos.dao.imp.AmazonPlanImplements;
 import com.chainsys.primevideos.logger.Logger;
 import com.chainsys.primevideos.model.Plan;
-
+@Component
 public class TestExportPlan {
 	static Logger logger = new Logger();
 	public static void main(String[] args) throws Exception {

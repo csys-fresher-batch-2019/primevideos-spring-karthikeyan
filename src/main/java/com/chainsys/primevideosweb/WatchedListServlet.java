@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.chainsys.primevideos.dao.imp.WatchListDAOImp;
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.imp.WatchListDAOImp;
 import com.chainsys.primevideos.model.PrimeReleases;
 @WebServlet("/WatchedListServlet")
 public class WatchedListServlet extends HttpServlet {

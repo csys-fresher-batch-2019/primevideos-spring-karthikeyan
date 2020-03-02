@@ -1,4 +1,4 @@
-package com.chainsys.primevideos.imp;
+package com.chainsys.primevideos.dao.imp;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Repository;
 
 import com.chainsys.primevideos.connection.TestConnection;
 import com.chainsys.primevideos.dao.UserCreditsDAO;
@@ -17,7 +19,7 @@ import com.chainsys.primevideos.model.UserCredits;
 import com.chainsys.primevideos.util.OTPUtil;
 import com.chainsys.primevideos.util.TestConformEmail;
 
-
+@Repository
 public class UserCreditsImp implements UserCreditsDAO {
 	static Logger logger = Logger.getInstance();
 	public boolean userLogin(String mailID) throws DbException {

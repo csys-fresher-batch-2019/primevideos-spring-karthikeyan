@@ -1,4 +1,4 @@
-package com.chainsys.primevideos.imp;
+package com.chainsys.primevideos.dao.imp;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,13 +7,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.chainsys.primevideos.connection.TestConnection;
 import com.chainsys.primevideos.dao.AmazonPlanDAO;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
 import com.chainsys.primevideos.logger.Logger;
 import com.chainsys.primevideos.model.Plan;
-
+@Repository
 public class AmazonPlanImplements implements AmazonPlanDAO {
 	Logger logger = Logger.getInstance();
 	public ArrayList<Plan> list() throws DbException {

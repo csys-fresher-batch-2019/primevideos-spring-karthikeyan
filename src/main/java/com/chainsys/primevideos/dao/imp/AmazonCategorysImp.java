@@ -1,4 +1,4 @@
-package com.chainsys.primevideos.imp;
+package com.chainsys.primevideos.dao.imp;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,13 +6,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Repository;
+
 import com.chainsys.primevideos.connection.TestConnection;
 import com.chainsys.primevideos.dao.CategoryDAO;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
 import com.chainsys.primevideos.logger.Logger;
 import com.chainsys.primevideos.model.Categorys;
-
+@Repository
 public class AmazonCategorysImp implements CategoryDAO {
 	Logger logger = Logger.getInstance();
 

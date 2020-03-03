@@ -2,7 +2,6 @@ package com.chainsys.primevideos.service;
 
 import java.util.ArrayList;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.primevideos.dao.CategoryDAO;
@@ -12,7 +11,7 @@ import com.chainsys.primevideos.model.Categorys;
 
 @Service
 public class ServiceCategory {
-	@Autowired
+	
 	CategoryDAO categoryDAO = new PrimeCategorysImp();
 	public void addCategorys(int id, String category) throws DbException{
 		categoryDAO.addCategorys(id, category);

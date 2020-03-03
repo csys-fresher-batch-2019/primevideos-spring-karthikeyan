@@ -10,8 +10,6 @@ public interface UserCreditsDAO {
 	void userUpdate(UserCredits users) throws DbException;
 
 	boolean userLogin(String mailId) throws DbException;
-
-	boolean deleteUser(String mailId) throws DbException;
 	
 	boolean resetPassword(String mailId) throws DbException;
 	

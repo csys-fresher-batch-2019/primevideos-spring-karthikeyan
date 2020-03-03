@@ -2,16 +2,16 @@ package com.chainsys.primevideos.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.primevideos.dao.UserCreditsDAO;
 import com.chainsys.primevideos.dao.imp.UserCreditsImp;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.model.UserCredits;
+
 @Service
 public class ServiceUserCredits {
-	@Autowired
+	
 	UserCreditsDAO credits = new UserCreditsImp();
 
 	public void userUpdate(UserCredits users) throws DbException {
@@ -20,10 +20,6 @@ public class ServiceUserCredits {
 
 	public boolean userLogin(String mailId) throws DbException {
 		return credits.userLogin(mailId);
-	}
-
-	public boolean deleteUser(String mailId) throws DbException {
-		return credits.deleteUser(mailId);
 	}
 
 	public boolean resetPassword(String mailId) throws DbException {
@@ -61,7 +57,8 @@ public class ServiceUserCredits {
 	public String userName(String mailId) throws DbException {
 		return credits.userName(mailId);
 	}
-	public List<UserCredits> list1() throws DbException{
+
+	public List<UserCredits> list1() throws DbException {
 		return credits.list1();
 	}
 }

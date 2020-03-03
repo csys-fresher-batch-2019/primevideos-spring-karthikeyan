@@ -1,6 +1,5 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.chainsys.primevideos.model.PrimeReleases"%>
-<%@page import="com.chainsys.primevideos.imp.PrimeReleasesDAOImp"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.List"%>
@@ -151,28 +150,28 @@ body {
 					<div class="card-body">
 						<div class="gfg">
 							<h6 class="card-text">
-								<centre>PrimeId:<%=cd1.getPrimeId()%>
+								<centre>PrimeId:<%=cd1.getPrimeId()%></centre>
 							</h6>
-							</centre>
+							
 						</div>
 						<div class="gfg">
 							<h6 class="card-text">
-								<centre>Genre:<%=cd1.getGenre()%>
+								<centre>Genre:<%=cd1.getGenre()%></centre>
 							</h6>
-							</centre>
+							
 						</div>
 						<div class="gfg">
 							<h6 class="card-number">
-								<centre>IMDB:<%=cd1.getImdbRating()%>
+							<centre>IMDB:<%=cd1.getImdbRating()%></centre>
 							</h6>
-							</centre>
+							
 						</div>
 						<div class="gfg">
 							<h6>
-								<i class="fa fa-thumbs-o-up"><%=cd1.getTlikes()%></i> <i
-									class="fa fa-thumbs-o-down"><%=cd1.getTdislikes()%>
+								<i class="fa fa-thumbs-o-up"><%=cd1.getTlikes()%></i> 
+								<i class="fa fa-thumbs-o-down"><%=cd1.getTdislikes()%></i>
 							</h6>
-							</i>
+							
 
 						</div>
 					</div>

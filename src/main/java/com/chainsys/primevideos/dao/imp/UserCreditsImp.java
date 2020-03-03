@@ -44,28 +44,6 @@ public class UserCreditsImp implements UserCreditsDAO {
 			}
 		}
 
-	
-	public boolean deleteUser(String mailId) throws DbException{
-		String sql ="delete from user_credits where mail_id = ?";
-		try(Connection con = TestConnection.getConnection();
-		PreparedStatement pst = con.prepareStatement(sql);)
-		{
-			pst.setString(1, mailId);
-			int row = pst.executeUpdate();
-			if(row==1)
-			{
-			logger.info("UserCredits of :"+mailId+" deleted \n");
-			return true;
-			}}
-		catch (SQLException e1) {
-			throw new DbException(InfoMessages.DELETEUSER);
-		} 
-		 catch (Exception e1) {
-				throw new DbException(InfoMessages.CONNECTION);
-			}
-		return false;
-	}
-	
 
 	public boolean resetPassword(String mailId) throws DbException {
 		int otp = 0;

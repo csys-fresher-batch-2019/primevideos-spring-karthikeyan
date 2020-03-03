@@ -2,7 +2,6 @@ package com.chainsys.primevideos.service;
 
 import java.util.ArrayList;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.primevideos.dao.WatchListDAO;
@@ -11,7 +10,7 @@ import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.model.PrimeReleases;
 @Service
 public class ServiceWatchList {
-	@Autowired
+	
 	WatchListDAO watch = new WatchListDAOImp();
 
 	public void likes(String mailId, int primeId) throws DbException{

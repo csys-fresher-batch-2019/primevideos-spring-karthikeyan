@@ -3,7 +3,6 @@ package com.chainsys.primevideos.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.primevideos.dao.PrimeReleasesDAO;
@@ -13,7 +12,7 @@ import com.chainsys.primevideos.model.PrimeReleases;
 @Service
 public class ServiceReleases {
 	
-	@Autowired
+	
 	PrimeReleasesDAO prime = new PrimeReleasesDAOImp();
 
 	public ArrayList<PrimeReleases> getSearchMovies(String sql) throws DbException {

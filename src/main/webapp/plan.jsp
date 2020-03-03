@@ -1,6 +1,7 @@
-<%@page import="com.chainsys.primevideos.imp.AmazonPlanImplements"%>
+<%@page import="com.chainsys.primevideos.service.ServicePlans"%>
 <%@page import="com.chainsys.primevideos.model.Plan"%>
 <%@page import="com.chainsys.primevideos.model.PrimeReleases"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList"%>
@@ -49,11 +50,11 @@
 <body>
 	<jsp:include page="nav.jsp"></jsp:include>
 	<%
-		AmazonPlanImplements as = new AmazonPlanImplements();
-		ArrayList<Plan> list = as.list();
+		ServicePlans as = new ServicePlans();
+			ArrayList<Plan> list  = as.list();
 	%>
 	<div class="gfg">
-		<centre>Prime Videos Plans</centre>
+		Prime Videos Plans
 	</div>
 	<center>
 		<table id=customers>
@@ -66,27 +67,22 @@
 					<th>Screens Count</th>
 					<th>Discount Amount</th>
 				</tr>
-				<%
-					int i = 1;
-					for (Plan l : list) {
-				%>
+				</thead>
+				
+				<tbody>
+				<c:set var="list" value="<%=list%>" ></c:set>
+				<c:forEach items="${list}" var="l" varStatus="i">				
 				<tr>
-					<td><%=i++%></td>
-					<td><%=l.getPlanId()%></td>
-					<td><%=l.getPlanAmount()%></td>
-					<td><%=l.getPlanDuration()%></td>
-					<td><%=l.getNoOfScreens()%></td>
-					<td><%=l.getDiscountAmount()%></td>
+					<td>${i.index+1}</td>
+					<td>${l.planId}</td>
+					<td>${l.planAmount}</td>
+					<td>${l.planDuration}</td>
+					<td>${l.noOfScreens}</td>
+					<td>${l.discountAmount}</td>
 				</tr>
-
-
-				<%
-					}
-				%>
-			</thead>
+				</c:forEach>
+				</tbody>
 		</table>
 	</center>
-	</br>
-	</form>
 </body>
 </html>

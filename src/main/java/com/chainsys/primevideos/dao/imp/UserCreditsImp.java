@@ -14,8 +14,8 @@ import com.chainsys.primevideos.connection.TestConnection;
 import com.chainsys.primevideos.dao.UserCreditsDAO;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
-import com.chainsys.primevideos.logger.Logger;
 import com.chainsys.primevideos.model.UserCredits;
+import com.chainsys.primevideos.util.Logger;
 import com.chainsys.primevideos.util.OTPUtil;
 import com.chainsys.primevideos.util.TestConformEmail;
 

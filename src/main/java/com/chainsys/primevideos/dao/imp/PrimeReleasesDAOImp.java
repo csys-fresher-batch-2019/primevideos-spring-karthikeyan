@@ -14,8 +14,8 @@ import com.chainsys.primevideos.connection.TestConnection;
 import com.chainsys.primevideos.dao.PrimeReleasesDAO;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
-import com.chainsys.primevideos.logger.Logger;
 import com.chainsys.primevideos.model.PrimeReleases;
+import com.chainsys.primevideos.util.Logger;
 @Repository
 public class PrimeReleasesDAOImp implements PrimeReleasesDAO {
 	static Logger logger = Logger.getInstance();
@@ -124,7 +124,7 @@ public class PrimeReleasesDAOImp implements PrimeReleasesDAO {
 		}
 	
 	
-	public List<PrimeReleases> list(String sqlq) throws DbException{
+	public ArrayList<PrimeReleases> list(String sqlq) throws DbException{
 		String sql = sqlq;
 		return commonCall(sql);
 	}
@@ -160,7 +160,7 @@ public class PrimeReleasesDAOImp implements PrimeReleasesDAO {
 					String b=rs.getString(2);
 					int c = rs.getInt(3);
 					String d = rs.getString(4);
-					at.setPrimeId(a);
+					at.setPrimeId(a); 
 					at.setNameofVideo(b);
 					at.setImdbRating(c);
 					at.setGenre(d);

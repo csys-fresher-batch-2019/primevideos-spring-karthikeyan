@@ -27,5 +27,9 @@ public interface UserCreditsDAO {
 	
 	boolean profile(String mailIds) throws DbException;
 	
+	String userName(String mailId) throws DbException;
+	
 	List<UserCredits> list() throws DbException;
+	
+	List<UserCredits> list1() throws DbException;
 }

@@ -8,14 +8,13 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
 
-import com.chainsys.primevideos.dao.imp.AmazonPlanImplements;
-import com.chainsys.primevideos.logger.Logger;
+import com.chainsys.primevideos.dao.imp.PrimePlanImplements;
 import com.chainsys.primevideos.model.Plan;
 @Component
 public class TestExportPlan {
 	static Logger logger = new Logger();
 	public static void main(String[] args) throws Exception {
-		AmazonPlanImplements imp = new AmazonPlanImplements();
+		PrimePlanImplements imp = new PrimePlanImplements();
 		ArrayList<Plan> e = imp.list();
 		String filecontents = "";
 		StringBuilder bld = new StringBuilder();

@@ -13,8 +13,8 @@ import com.chainsys.primevideos.connection.TestConnection;
 import com.chainsys.primevideos.dao.WatchListDAO;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
-import com.chainsys.primevideos.logger.Logger;
 import com.chainsys.primevideos.model.PrimeReleases;
+import com.chainsys.primevideos.util.Logger;
 
 @Repository
 public class WatchListDAOImp implements WatchListDAO {
@@ -182,12 +182,6 @@ public class WatchListDAOImp implements WatchListDAO {
 			e1.printStackTrace();
 			throw new DbException(InfoMessages.CONNECTION);
 		}
-	}
-
-	@Override
-	public void likes(String mailID, int primeId, int likes) {
-		// TODO Auto-generated method stub
-
 	}
 
 }

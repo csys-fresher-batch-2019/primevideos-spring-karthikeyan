@@ -26,6 +26,7 @@ public class SignUpServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String mail=request.getParameter("email");
 		String password = request.getParameter("npass");
+		//UserCreditsImp user1 = new UserCreditsImp();
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
 			boolean a = user1.userLogin(mail);

@@ -12,7 +12,8 @@ import com.chainsys.primevideos.model.Categorys;
 @Service
 public class ServiceCategory {
 	
-	CategoryDAO categoryDAO = new PrimeCategorysImp();
+	private CategoryDAO categoryDAO = new PrimeCategorysImp();
+	
 	public void addCategorys(int id, String category) throws DbException{
 		categoryDAO.addCategorys(id, category);
 	}

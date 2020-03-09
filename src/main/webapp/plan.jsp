@@ -48,13 +48,12 @@
 </head>
 <body>
 	<jsp:include page="nav.jsp"></jsp:include>
-	<%
-		ServicePlans as = new ServicePlans();
-			ArrayList<Plan> list  = as.list();
-	%>
 	<div class="gfg">
 		Prime Videos Plans
 	</div>
+	<%
+		ArrayList<Plan> list = (ArrayList) request.getAttribute("plans");
+	%>
 	<center>
 		<table id=customers>
 			<thead>

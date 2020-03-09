@@ -8,7 +8,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-@ServletComponentScan("com.chainsys.primevideosweb")
+@ServletComponentScan("com.chainsys.primevideos.servlet")
 public class PrimeVideosSpringApplication {
 
 	public static void main(String[] args) {

@@ -11,8 +11,8 @@ import com.chainsys.primevideos.model.Plan;
 
 @Service
 public class ServicePlans {
-	
-	PrimePlanDAO Plans = new PrimePlanImplements();
+
+	private PrimePlanDAO Plans = new PrimePlanImplements();
 
 	public ArrayList<Plan> list() throws DbException {
 		return Plans.list();

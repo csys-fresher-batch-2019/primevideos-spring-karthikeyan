@@ -1,7 +1,6 @@
 package com.chainsys.primevideos.dao.imp;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,9 +20,9 @@ public class PrimeReleasesDAOImp implements PrimeReleasesDAO {
 	static Logger logger = Logger.getInstance();
 
 
-	private static void printLocal() {
+	/*private static void printLocal() {
 		logger.info("Prime Id   Name of Video");
-	}
+	}*/
 
 	
 	public ArrayList<PrimeReleases> getSearchMovies(String sql) throws DbException {

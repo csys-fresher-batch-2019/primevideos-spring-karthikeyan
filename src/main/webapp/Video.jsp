@@ -85,13 +85,14 @@ video {
 
 		<div class="columnA">
 			<video width="1366" controls>
-				<source src="asserts/videos/<%=moviename%>.mp4" " type="video/mp4">
-				Your browser does not support HTML5 video.
+				<source src="asserts/videos/<%=moviename%>.mp4" type="video/mp4">
+			<p>Your browser does not support HTML5 video.</p>
 			</video>
 
 			<p>
 				Video courtesy of <a target="_blank"> Prime Videos</a>.
 			</p>
+		</div>
 		</div>
 </body>
 </html>

@@ -13,7 +13,7 @@ import com.chainsys.primevideos.model.PrimeReleases;
 public class ServiceReleases {
 	
 	
-	PrimeReleasesDAO prime = new PrimeReleasesDAOImp();
+	private PrimeReleasesDAO prime = new PrimeReleasesDAOImp();
 
 	public ArrayList<PrimeReleases> getSearchMovies(String sql) throws DbException {
 		return prime.getSearchMovies(sql);

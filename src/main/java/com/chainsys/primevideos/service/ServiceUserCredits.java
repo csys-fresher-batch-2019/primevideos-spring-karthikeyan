@@ -11,8 +11,7 @@ import com.chainsys.primevideos.model.UserCredits;
 
 @Service
 public class ServiceUserCredits {
-	
-	UserCreditsDAO credits = new UserCreditsImp();
+	private UserCreditsDAO credits = new UserCreditsImp();
 
 	public void userUpdate(UserCredits users) throws DbException {
 		credits.userUpdate(users);

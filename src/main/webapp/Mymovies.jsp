@@ -1,5 +1,5 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.chainsys.primevideos.imp.PrimeReleasesDAOImp"%>
+<%@page import="com.chainsys.primevideos.dao.imp.PrimeReleasesDAOImp"%>
 <%@page import="java.util.List"%>
 <%@page import="com.chainsys.primevideos.model.PrimeReleases"%>
 

@@ -96,7 +96,8 @@ public class WatchListDAOImp implements WatchListDAO {
 			} else {
 				sql2 = "insert into  watch_lists (watch_later,mail_id,prime_id) values (1,?,?)";
 			}
-			try (Connection con = TestConnection.getConnection(); PreparedStatement pst = con.prepareStatement(sql2);) {
+			try (Connection con = TestConnection.getConnection(); 
+					PreparedStatement pst = con.prepareStatement(sql2);) {
 				pst.setString(1, mailId);
 				pst.setInt(2, primeId);
 				try (ResultSet rs = pst.executeQuery();) {
@@ -119,7 +120,8 @@ public class WatchListDAOImp implements WatchListDAO {
 
 	public ArrayList<PrimeReleases> select(String MailId) throws DbException {
 		String sql = "select prime_id,name_of_video from prime_releases where prime_id IN (select prime_id from watch_lists where mail_id = ? and watched <> 0)";
-		try (Connection con = TestConnection.getConnection(); PreparedStatement pst = con.prepareStatement(sql);) {
+		try (Connection con = TestConnection.getConnection(); 
+			PreparedStatement pst = con.prepareStatement(sql);) {
 			pst.setString(1, MailId);
 			try (ResultSet rs = pst.executeQuery();) {
 				ArrayList<PrimeReleases> l = new ArrayList<>();
@@ -142,7 +144,8 @@ public class WatchListDAOImp implements WatchListDAO {
 
 	public ArrayList<PrimeReleases> select1(String MailId) throws DbException {
 		String sql = "select prime_id,name_of_video from prime_releases where prime_id IN (select prime_id from watch_lists where mail_id = ? and watch_later <> 0)";
-		try (Connection con = TestConnection.getConnection(); PreparedStatement pst = con.prepareStatement(sql);) {
+		try (Connection con = TestConnection.getConnection(); 
+				PreparedStatement pst = con.prepareStatement(sql);) {
 			pst.setString(1, MailId);
 			try (ResultSet rs = pst.executeQuery();) {
 				ArrayList<PrimeReleases> l = new ArrayList<>();
@@ -165,7 +168,8 @@ public class WatchListDAOImp implements WatchListDAO {
 
 	public boolean watched(String mailID, int primeId) throws DbException {
 		String sql = "Select * from watch_lists where mail_id = ? and prime_id = ?";
-		try (Connection con = TestConnection.getConnection(); PreparedStatement pst = con.prepareStatement(sql);) {
+		try (Connection con = TestConnection.getConnection(); 
+				PreparedStatement pst = con.prepareStatement(sql);) {
 			pst.setString(1, mailID);
 			pst.setInt(2, primeId);
 			try (ResultSet rs = pst.executeQuery();) {

@@ -16,6 +16,7 @@ import com.chainsys.primevideos.util.Logger;
 import com.chainsys.primevideos.util.OTPUtil;
 import com.chainsys.primevideos.util.TestConformEmail;
 
+
 @WebServlet("/ForgetPasswordServlet")
 public class ForgetPasswordServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,6 +26,7 @@ public class ForgetPasswordServlet extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mail=request.getParameter("email");		
+		//UserCreditsImp user1 = new UserCreditsImp();
 		ServiceUserCredits user1 = new ServiceUserCredits();		
 		try {
 			boolean a = user1.userLogin(mail);

@@ -17,14 +17,15 @@ import com.chainsys.primevideos.util.Logger;
 @WebServlet("/OtpServlet")
 public class OtpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
-    public OtpServlet() {
-        super();
-    }
 
+	public OtpServlet() {
+		super();
+	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ServiceUserCredits user = new ServiceUserCredits();
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//UserCreditsImp user1 = new UserCreditsImp();
+		ServiceUserCredits user1 = new ServiceUserCredits();
 		String OTP1 = (String) request.getParameter("otpuser");
 		int Otp1 = Integer.parseInt(OTP1);
 		HttpSession session = request.getSession();
@@ -32,30 +33,22 @@ public class OtpServlet extends HttpServlet {
 		String username = (String) session.getAttribute("username");
 		String mail = (String) session.getAttribute("MailIdRegister");
 		String password = (String) session.getAttribute("PasswordRegister");
-	if (Otp1 == OTP11)
-	{ 
-		try 
-		{
-			boolean result = user.insertSignUp1(username, mail, password);
-			if(result)
-			{
-				RequestDispatcher d = request.getRequestDispatcher("search.jsp");
-				d.forward(request, response);
+		if (Otp1 == OTP11) {
+			try {
+				boolean result = user1.insertSignUp1(username, mail, password);
+				if (result) {
+					RequestDispatcher d = request.getRequestDispatcher("search.jsp");
+					d.forward(request, response);
+				}
+			} catch (DbException e) {
+				Logger.error(e.getMessage());
 			}
-		}catch (DbException e) {
-			Logger.error(e.getMessage());
-		}
-			
-		
-	}
-	else
-	{
-		String error = "OTP Does Not Match";
-		response.sendRedirect("OTP.jsp?result1="+error);
-		
-	}
-	
 
-       
+		} else {
+			String error = "OTP Does Not Match";
+			response.sendRedirect("OTP.jsp?result1=" + error);
+
+		}
+
 	}
 }

@@ -21,6 +21,7 @@ public class LogInMail extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mail=request.getParameter("email");		
+		//UserCreditsImp user1 = new UserCreditsImp();
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
 			boolean a = user1.userLogin(mail);

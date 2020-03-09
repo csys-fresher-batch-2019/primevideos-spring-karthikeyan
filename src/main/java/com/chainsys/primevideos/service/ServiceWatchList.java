@@ -10,9 +10,8 @@ import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.model.PrimeReleases;
 @Service
 public class ServiceWatchList {
+	private WatchListDAO watch = new WatchListDAOImp();
 	
-	WatchListDAO watch = new WatchListDAOImp();
-
 	public void likes(String mailId, int primeId) throws DbException{
 		watch.likes(mailId, primeId);
 	}

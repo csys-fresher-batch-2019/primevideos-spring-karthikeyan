@@ -30,7 +30,7 @@ public class ViewMoviesServlet extends HttpServlet {
 		System.out.println("hello");
 		System.out.println(id);
 		int id1 = Integer.parseInt(id);
-		// PrimeReleasesDAOImp prime = new PrimeReleasesDAOImp();
+		//PrimeReleasesDAOImp prime = new PrimeReleasesDAOImp();
 		ServiceReleases prime = new ServiceReleases();
 		ArrayList<PrimeReleases> list1;
 		try {

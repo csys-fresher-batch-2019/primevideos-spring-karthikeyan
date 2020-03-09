@@ -24,6 +24,7 @@ public class LoginPassword extends HttpServlet {
 		String password = request.getParameter("password");
 		System.out.println(mail);
 		System.out.println(password);
+		//UserCreditsImp user1 = new UserCreditsImp();
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
 			String Pass = user1.password(mail);

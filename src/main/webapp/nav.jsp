@@ -206,7 +206,7 @@ head
 			</button></a> <a href="WatchedListServlet"><button class="btn">Watched
 				Movies</button></a> <a href="WatchLaterServlet"><button class="btn">WatchLater
 				Movies</button></a> <a href="ForgetPassword.jsp"><button class="btn">Change
-				Password</button></a> <a href="plan.jsp"><button class="btn">Prime
+				Password</button></a> <a href="PlanServlet"><button class="btn">Prime
 				Plans</button></a> <a href="LogoutServlet"><button class="btn">LogOut</button></a>
 
 	</div>

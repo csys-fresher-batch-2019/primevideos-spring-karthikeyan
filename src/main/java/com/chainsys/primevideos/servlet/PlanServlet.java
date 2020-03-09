@@ -12,29 +12,27 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.model.PrimeReleases;
-import com.chainsys.primevideos.service.ServiceWatchList;
-@WebServlet("/WatchLaterServlet")
-public class WatchLaterServlet extends HttpServlet {
+import com.chainsys.primevideos.model.Plan;
+import com.chainsys.primevideos.service.ServicePlans;
+@WebServlet("/PlanServlet")
+public class PlanServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public WatchLaterServlet() {
+       
+    public PlanServlet() {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		String mail = (String)session.getAttribute("Usermail");		
-		ServiceWatchList wa = new ServiceWatchList();
-		ArrayList<PrimeReleases> list ;
+		ServicePlans as = new ServicePlans();
 		try {
-			list =  wa.select1(mail);
+			HttpSession session = request.getSession();
+			ArrayList<Plan> list  = as.list();
 			System.out.println(list);
-			session.setAttribute("watchlatermovies", list);
-			
-			RequestDispatcher dispatcher=request.getRequestDispatcher("Mymovies.jsp");
+			session.setAttribute("plans", list);
+			RequestDispatcher dispatcher=request.getRequestDispatcher("plan.jsp");
 			dispatcher.forward(request, response);
-		} catch (DbException e1) {
-			e1.printStackTrace();
+		} catch (DbException e) {
+			e.printStackTrace();
 		}
 	}
-
 }
+

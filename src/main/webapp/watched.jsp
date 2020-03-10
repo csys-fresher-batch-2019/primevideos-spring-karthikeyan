@@ -1,10 +1,7 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.chainsys.primevideos.dao.imp.PrimeReleasesDAOImp"%>
-<%@page import="java.util.List"%>
-<%@page import="com.chainsys.primevideos.model.PrimeReleases"%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -109,34 +106,26 @@ head
 >
 </style>
 <body>
-	<jsp:include page="nav.jsp"></jsp:include>
+	<jsp:include page="Index1.jsp"></jsp:include>
 	<div class="header1">
 		<h2 style="color: white; font-size: 200%">Watched Movies</h2>
 	</div>
-	<%
-		ArrayList<PrimeReleases> cd = (ArrayList) request.getAttribute("watchedmovies");
-		if (cd != null) {
-			for (PrimeReleases as : cd) {
-	%>
-	<div class="row">
+	<c:forEach items="${watchedmovies}" var="l">
 
-		<div class="columnA">
-			<a href="ViewMoviesServlet?id=<%=as.getPrimeId()%>"> <img
-				src="asserts/<%=as.getNameofVideo()%>.jpg" width="300" height="300"
-				alt="<%=as.getNameofVideo()%>"></a>
-		</div>
+		<div class="row">
 
-		<div class="columnB">
-			<p>
-				Prime ID :<%=as.getPrimeId()%></p>
-			<p>
-				Movie :<%=as.getNameofVideo()%></p>
+			<div class="columnA">
+				<a href="ViewMoviesServlet?id=${l.primeId}"> <img
+					src="asserts/${l.nameofVideo}.jpg" width="300" height="300"
+					alt="${l.nameofVideo}"></a>
+			</div>
+
+			<div class="columnB">
+				<p>Prime ID :${l.primeId}</p>
+				<p>Movie :${l.nameofVideo}</p>
+			</div>
 		</div>
-	</div>
-	<%
-		}
-		}
-	%>
+	</c:forEach>
 
 </body>
 </html>

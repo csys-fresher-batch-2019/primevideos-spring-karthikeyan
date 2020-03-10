@@ -29,7 +29,7 @@ public class SignUpServlet extends HttpServlet {
 		//UserCreditsImp user1 = new UserCreditsImp();
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
-			boolean a = user1.userLogin(mail);
+			boolean a = user1.existMailId(mail);
 			System.out.println("Servlet - login" + a);
 			if (a == true)
 			{

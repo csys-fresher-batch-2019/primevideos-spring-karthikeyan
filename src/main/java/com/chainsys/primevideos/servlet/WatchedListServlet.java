@@ -21,14 +21,13 @@ public class WatchedListServlet extends HttpServlet {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		String mail = (String)session.getAttribute("Usermail");		
 		//WatchListDAOImp wa = new WatchListDAOImp();
 		ServiceWatchList wa = new ServiceWatchList();
 		ArrayList<PrimeReleases> list ;
 		try {
-			list =  wa.select(mail);
+			list =  wa.findOneWatched(mail);
 			System.out.println(list);
 			request.setAttribute("watchedmovies", list);
 			

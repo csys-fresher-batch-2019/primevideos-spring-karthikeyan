@@ -25,7 +25,7 @@ public class PlanServlet extends HttpServlet {
 		ServicePlans as = new ServicePlans();
 		try {
 			HttpSession session = request.getSession();
-			ArrayList<Plan> list  = as.list();
+			ArrayList<Plan> list  = as.findPlans();
 			System.out.println(list);
 			session.setAttribute("plans", list);
 			RequestDispatcher dispatcher=request.getRequestDispatcher("plan.jsp");

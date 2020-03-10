@@ -26,7 +26,7 @@ public class WatchLaterServlet extends HttpServlet {
 		ServiceWatchList wa = new ServiceWatchList();
 		ArrayList<PrimeReleases> list ;
 		try {
-			list =  wa.select1(mail);
+			list =  wa.findOneWatchLater(mail);
 			System.out.println(list);
 			session.setAttribute("watchlatermovies", list);
 			

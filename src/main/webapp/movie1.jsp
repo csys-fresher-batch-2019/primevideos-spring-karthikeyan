@@ -1,19 +1,16 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.chainsys.primevideos.imp.PrimeReleasesDAOImp"%>
+<%@page import="com.chainsys.primevideos.dao.imp.PrimeReleasesDAOImp"%>
 <%@page import="java.util.List"%>
 <%@page import="com.chainsys.primevideos.model.PrimeReleases"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+<link rel="stylesheet"	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<title>MoviesReview</title>
 <style>
 * {
 	box-sizing: border-box;
@@ -136,64 +133,57 @@ img {
 </head>
 
 <body>
-	<%
-		ArrayList<PrimeReleases> cd = (ArrayList) request.getAttribute("details");
-		for (PrimeReleases as : cd) {
-	%>
 	<div class="header">
 		<h2 style="color: white; font-size: 200%">Prime Videos</h2>
 	</div>
 
 	<div class="nav_menu">
-		<a href="#"><button class="btn">
-				<i class="fa fa-home"></i> Home
-			</button></a> <a href="search.jsp"><button class="btn">
-				<i class="fa fa-search"></i>Search
-			</button></a> <a href="WatchedListServlet"><button class="btn">Watched
-				Movies</button></a> <a href="WatchLaterServlet"><button class="btn">WatchLater
-				Movies</button></a> <a href="plan.jsp"><button class="btn">Prime
-				Plans</button></a>
+		<a href="#"><button class="btn"><i class="fa fa-home"></i> Home	</button></a> 
+		<a href="search.jsp"><button class="btn"><i class="fa fa-search"></i>Search	</button></a> 
+		<a href="WatchedListServlet"><button class="btn">Watched Movies</button></a> 
+		<a href="WatchLaterServlet"><button class="btn">WatchLater Movies</button></a> 
+		<a href="plan.jsp"><button class="btn">Prime Plans</button></a>
 	</div>
 	<div class="header1">
 		<h2 style="color: white; font-size: 200%">
-			<%=as.getNameofVideo()%>
+			${details.nameofVideo}
 		</h2>
 	</div>
 
 	<div class="row">
 
 		<div class="columnA">
-			<img src="asserts/<%=as.getNameofVideo()%>.jpg" width="300"
-				height="300" alt="<%=as.getNameofVideo()%>">
+			<img src="asserts/${details.nameofVideo}.jpg" width="300"
+				height="300" alt="${details.nameofVideo}">
 		</div>
 
 		<div class="columnB">
 			<p>
-				Prime ID :<%=as.getPrimeId()%></p>
+				Prime ID :${details.primeId}</p>
 			<p>
-				Category Type :<%=as.getCategoryId()%></p>
+				Category Type :${details.categoryId}</p>
 			<p>
-				Genre :<%=as.getGenre()%></p>
+				Genre :${details.genre}</p>
 			<p>
-				Language :<%=as.getAudioLanguages()%></p>
+				Language :${details.audioLanguages}</p>
 			<p>
-				Director :<%=as.getDirector()%></p>
+				Director :${details.director}</p>
 			<p>
-				Cast :<%=as.getCasting()%></p>
+				Cast :${details.casting}</p>
 			<p>
-				IMDB Rating :<%=as.getImdbRating()%></p>
+				IMDB Rating :${details.imdbRating}</p>
 			<p>
-				Release Date :<%=as.getReleaseDate()%></p>
+				Release Date :${details.releaseDate}</p>
 			<p>
-				Prime Release Date :<%=as.getPrimereleaseDate()%></p>
+				Prime Release Date :${details.primereleaseDate}</p>
 			<p>
-				Box Office :<%=as.getBoxofficecollectionuinmillions()%></p>
-			<p><%=as.getDescriptionofvideo()%></p>
+				Box Office :${details.boxofficecollectionuinmillions}</p>
+			<p>${details.descriptionofvideo}</p>
 		</div>
 		<div class="columnC">
 			<p>
 				<a
-					href="Watchinterface?decide=1&movieid=<%=as.getPrimeId()%>&movien=<%=as.getNameofVideo()%>">
+					href="Watchinterface?decide=1&movieid=${details.primeId}&movien=${details.nameofVideo}">
 					<button class="btn success">
 						<span>Watch Movie </span>
 					</button>
@@ -202,7 +192,7 @@ img {
 			<p>
 			<p>
 				<a
-					href="Watchinterface?decide=2&movieid=<%=as.getPrimeId()%>&movien=<%=as.getNameofVideo()%>">
+					href="Watchinterface?decide=2&movieid=${details.primeId}&movien=${details.nameofVideo}">
 					<button class="btn success">
 						<span>Watch Later </span>
 					</button>
@@ -221,7 +211,7 @@ img {
 									class="lb-tt-rb"></i> <i class="lb-tt-a"></i></i> <span
 								class="likebtn-icon lb-like-icon">&nbsp;</span> <span
 								class="likebtn-label lb-like-label">Like</span></span> <span
-							class="lb-count" data-count="2"><%=as.getTlikes()%></span></span> <span
+							class="lb-count" data-count="2">${details.tlikes}</span></span> <span
 						class="likebtn-button lb-dislike " id="lb-dislike-0"> <span
 							onclick="LikeBtn.vote(-1, 0, event);" class="lb-a"
 							data-lb_index="0"> <i class="lb-tt lb-tooltip-tt"><i
@@ -230,7 +220,7 @@ img {
 									<i class="lb-tt-m2"></i> <i class="lb-tt-lb"></i> <i
 									class="lb-tt-rb"></i> <i class="lb-tt-a"></i></i> <span
 								class="likebtn-icon lb-dislike-icon">&nbsp;</span></span> <span
-							class="lb-count" data-count="0"><%=as.getTdislikes()%></span></span></span>
+							class="lb-count" data-count="0">${details.tdislikes}</span></span></span>
 				</span>
 			</p>
 		</div>
@@ -250,6 +240,3 @@ img {
 </script>
 
 </html>
-<%
-	}
-%>

@@ -3,8 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-	crossorigin="anonymous">
+	>
 <style>
 .button {
 	background-color: #4CAF50;
@@ -33,21 +32,13 @@
 	text-align: center;
 }
 
-.geeks {
-	font-size: 17px;
-	text-align: center;
-	margin-bottom: 20px;
-}
-
 body {
 	background-image: url('asserts/download.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 }
-</
-head
->
+
 </style>
 <body style="text-align: center">
 	<div class="gfg">PrimeVideos</div>

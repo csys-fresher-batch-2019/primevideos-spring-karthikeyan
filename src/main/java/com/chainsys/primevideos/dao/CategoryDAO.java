@@ -7,13 +7,13 @@ import com.chainsys.primevideos.model.Categorys;
 
 public interface CategoryDAO {
 
-	void addCategorys(int id, String category) throws DbException;
+	void saveCategorys(int id, String category) throws DbException;
 	
 	void updateCategory(int categoryid,String categoryname) throws DbException;
 
 	void deleteCategorys(int categoryId) throws  DbException;
 
-	ArrayList<Categorys> getcategorys() throws DbException;
+	ArrayList<Categorys> findAllCategorys() throws DbException;
 	
 	
 }

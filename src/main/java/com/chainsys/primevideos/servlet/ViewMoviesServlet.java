@@ -25,17 +25,15 @@ public class ViewMoviesServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		//PrintWriter out = response.getWriter();
 		String id = request.getParameter("id");
 		System.out.println("hello");
 		System.out.println(id);
 		int id1 = Integer.parseInt(id);
-		//PrimeReleasesDAOImp prime = new PrimeReleasesDAOImp();
 		ServiceReleases prime = new ServiceReleases();
-		ArrayList<PrimeReleases> list1;
+		PrimeReleases primeReleases = new PrimeReleases();
 		try {
-			list1 = prime.getDetails(id1);
-			request.setAttribute("details", list1);
+			primeReleases = prime.findOneMovieDetails(id1);
+			request.setAttribute("details", primeReleases);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("movie1.jsp");
 			dispatcher.forward(request, response);
 		} catch (DbException e1) {

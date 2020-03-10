@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -16,41 +15,36 @@ import com.chainsys.primevideos.exception.InfoMessages;
 import com.chainsys.primevideos.model.Plan;
 import com.chainsys.primevideos.util.Logger;
 @Repository
-public class PrimePlanImplements implements PrimePlanDAO {
+public class PrimePlanDAOImpl implements PrimePlanDAO {
 	Logger logger = Logger.getInstance();
-	public ArrayList<Plan> list() throws DbException {
+	public ArrayList<Plan> findPlans() throws DbException {
 		String sql = "select * from plans";
 		try (Connection con = TestConnection.getConnection(); PreparedStatement pst = con.prepareStatement(sql);) {
 			try (ResultSet rs = pst.executeQuery();) {
 				ArrayList<Plan> ll = new ArrayList<>();
 
 				while (rs.next()) {
-					valPlan(rs, ll);
+					int a = rs.getInt(1);
+					int b = rs.getInt(2);
+					int c = rs.getInt(3);
+					int d = rs.getInt(4);
+					int e = rs.getInt(5);
+					Plan as = new Plan();
+					as.setPlanId(a);
+					as.setPlanAmount(b);
+					as.setPlanDuration(c);
+					as.setNoOfScreens(d);
+					as.setDiscountAmount(e);
+
+					ll.add(as);
 
 				}
 				return ll;
 			}
 		} catch (SQLException e1) {
 			throw new DbException(InfoMessages.VIEWPLAN);
-		} catch (Exception e1) {
-			throw new DbException(InfoMessages.CONNECTION);
 		}
-
 	}
 
-	private void valPlan(ResultSet rs, List<Plan> ll) throws SQLException {
-		int a = rs.getInt(1);
-		int b = rs.getInt(2);
-		int c = rs.getInt(3);
-		int d = rs.getInt(4);
-		int e = rs.getInt(5);
-		Plan as = new Plan();
-		as.setPlanId(a);
-		as.setPlanAmount(b);
-		as.setPlanDuration(c);
-		as.setNoOfScreens(d);
-		as.setDiscountAmount(e);
 
-		ll.add(as);
-	}
 }

@@ -29,7 +29,7 @@ public class ChangePasswordServlet extends HttpServlet {
 		String password = request.getParameter("npass");
 		System.out.println(password);
 			try {
-				boolean a = user.verifyOTPAndUpdatePassword(mail, password);
+				boolean a = user.updatePassword(mail, password);
 				if(a == true)
 				{
 					RequestDispatcher d = request.getRequestDispatcher("LoginMailId.jsp");

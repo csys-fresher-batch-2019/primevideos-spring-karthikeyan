@@ -6,47 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-	crossorigin="anonymous">
+	>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 * {
+
 	box-sizing: border-box;
-}
-
-/* CSS property for header section */
-.header {
-	background-color: transparent;
-	padding: 15px;
-	text-align: center;
-}
-
-.header1 {
-	background-color: Tomato;
-	text-align: center;
-	padding: 10px;
-	font-size: 10px;
-}
-
-/* CSS property for nevigation menu */
-.nav_menu {
-	overflow: hidden;
-	background-color: Tomato;
-}
-
-.nav_menu a {
-	float: left;
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-.nav_menu a:hover {
-	background-color: white;
-	color: green;
+	margin : auto;
 }
 
 .button {
@@ -130,28 +97,6 @@ input[type=text1] {
 	border: 1px solid #ddd;
 }
 
-/* Style the submit button */
-.form-inline button {
-	padding: 10px 20px;
-	background-color: dodgerblue;
-	border: 1px solid #ddd;
-	color: white;
-}
-
-.form-inline button:hover {
-	background-color: royalblue;
-}
-
-/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
-@media ( max-width : 800px) {
-	.form-inline input {
-		margin: 10px 0;
-	}
-	.form-inline {
-		flex-direction: column;
-		align-items: stretch;
-	}
-}
 
 .button {
 	background-color: #4CAF50;
@@ -189,10 +134,12 @@ body {
 head
 >
 </style>
+
 <body style="text-align: centre">
-	<jsp:include page="nav.jsp"></jsp:include>
+	<jsp:include page="Index1.jsp"></jsp:include>
 	<div class="gfg">Prime Video Search</div>
 	<form action="searchServlet">
+
 		<div class="container">
 
 

@@ -17,10 +17,10 @@ import com.chainsys.primevideos.model.PrimeReleases;
 import com.chainsys.primevideos.util.Logger;
 
 @Repository
-public class WatchListDAOImp implements WatchListDAO {
+public class WatchListDAOImpl implements WatchListDAO {
 	static Logger logger = Logger.getInstance();
 
-	public void likes(String mailId, int primeId) throws DbException {
+	public void saveLikes(String mailId, int primeId) throws DbException {
 		boolean row = false;
 		try (Connection con = TestConnection.getConnection();
 				CallableStatement cstmt = con.prepareCall("{call LIKES(?,?)}");) {
@@ -29,14 +29,12 @@ public class WatchListDAOImp implements WatchListDAO {
 			row = cstmt.execute();
 		} catch (SQLException e1) {
 			throw new DbException(InfoMessages.OPERATION);
-		} catch (Exception e1) {
-			throw new DbException(InfoMessages.CONNECTION);
 		}
 		if (row == true)
 			System.out.println("Thanks for your Review");
 	}
 
-	public void dislikes(String mailId, int primeId) throws DbException {
+	public void saveDislikes(String mailId, int primeId) throws DbException {
 		boolean row = false;
 		try (Connection con = TestConnection.getConnection();
 				CallableStatement cstmt = con.prepareCall("{call DISLIKES(?,?)}");) {
@@ -45,14 +43,12 @@ public class WatchListDAOImp implements WatchListDAO {
 			row = cstmt.execute();
 		} catch (SQLException e1) {
 			throw new DbException(InfoMessages.OPERATION);
-		} catch (Exception e1) {
-			throw new DbException(InfoMessages.CONNECTION);
 		}
 		if (row == true)
 			System.out.println("Thanks for your Review");
 	}
 
-	public void viewerRating(String mailId, int primeId, int viewerRating) throws DbException {
+	public void saveViewerRating(String mailId, int primeId, int viewerRating) throws DbException {
 		boolean row = false;
 		try (Connection con = TestConnection.getConnection();
 				CallableStatement cstmt = con.prepareCall("{call VIEWER_REIVEW(?,?,?)}");) {
@@ -62,8 +58,6 @@ public class WatchListDAOImp implements WatchListDAO {
 			row = cstmt.execute();
 		} catch (SQLException e1) {
 			throw new DbException(InfoMessages.OPERATION);
-		} catch (Exception e1) {
-			throw new DbException(InfoMessages.CONNECTION);
 		}
 		if (row == true)
 			System.out.println("Thanks for your Review");
@@ -71,7 +65,7 @@ public class WatchListDAOImp implements WatchListDAO {
 
 	public boolean updateWatched(String mailId, int primeId, int decide) throws DbException {
 		boolean row;
-		if (watched(mailId, primeId)) {
+		if (findAllWatched(mailId, primeId)) {
 			try (Connection con = TestConnection.getConnection();
 					CallableStatement cstmt = con.prepareCall("{call INCREMENT_WATCHED_BY_ONE(?,?,?)}");) {
 				System.out.println("hello123");
@@ -85,8 +79,6 @@ public class WatchListDAOImp implements WatchListDAO {
 				}
 			} catch (SQLException e1) {
 				throw new DbException(InfoMessages.OPERATION);
-			} catch (Exception e1) {
-				throw new DbException(InfoMessages.CONNECTION);
 			}
 
 		} else {
@@ -110,15 +102,12 @@ public class WatchListDAOImp implements WatchListDAO {
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 				throw new DbException(InfoMessages.MAILCHECK);
-			} catch (Exception e1) {
-				e1.printStackTrace();
-				throw new DbException(InfoMessages.CONNECTION);
 			}
 		}
 		return false;
 	}
 
-	public ArrayList<PrimeReleases> select(String MailId) throws DbException {
+	public ArrayList<PrimeReleases> findOneWatched(String MailId) throws DbException {
 		String sql = "select prime_id,name_of_video from prime_releases where prime_id IN (select prime_id from watch_lists where mail_id = ? and watched <> 0)";
 		try (Connection con = TestConnection.getConnection(); 
 			PreparedStatement pst = con.prepareStatement(sql);) {
@@ -137,12 +126,10 @@ public class WatchListDAOImp implements WatchListDAO {
 			}
 		} catch (SQLException e1) {
 			throw new DbException(InfoMessages.VIEWVIDEO);
-		} catch (Exception e1) {
-			throw new DbException(InfoMessages.CONNECTION);
 		}
 	}
 
-	public ArrayList<PrimeReleases> select1(String MailId) throws DbException {
+	public ArrayList<PrimeReleases> findOneWatchLater(String MailId) throws DbException {
 		String sql = "select prime_id,name_of_video from prime_releases where prime_id IN (select prime_id from watch_lists where mail_id = ? and watch_later <> 0)";
 		try (Connection con = TestConnection.getConnection(); 
 				PreparedStatement pst = con.prepareStatement(sql);) {
@@ -161,12 +148,10 @@ public class WatchListDAOImp implements WatchListDAO {
 			}
 		} catch (SQLException e1) {
 			throw new DbException(InfoMessages.VIEWVIDEO);
-		} catch (Exception e1) {
-			throw new DbException(InfoMessages.CONNECTION);
 		}
 	}
 
-	public boolean watched(String mailID, int primeId) throws DbException {
+	public boolean findAllWatched(String mailID, int primeId) throws DbException {
 		String sql = "Select * from watch_lists where mail_id = ? and prime_id = ?";
 		try (Connection con = TestConnection.getConnection(); 
 				PreparedStatement pst = con.prepareStatement(sql);) {
@@ -182,9 +167,6 @@ public class WatchListDAOImp implements WatchListDAO {
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 			throw new DbException(InfoMessages.MAILCHECK);
-		} catch (Exception e1) {
-			e1.printStackTrace();
-			throw new DbException(InfoMessages.CONNECTION);
 		}
 	}
 

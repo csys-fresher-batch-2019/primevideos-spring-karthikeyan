@@ -15,10 +15,10 @@ import com.chainsys.primevideos.exception.InfoMessages;
 import com.chainsys.primevideos.model.Categorys;
 import com.chainsys.primevideos.util.Logger;
 @Repository
-public class PrimeCategorysImp implements CategoryDAO {
+public class CategorysDAOImpl implements CategoryDAO {
 	Logger logger = Logger.getInstance();
 
-	public void addCategorys(int id, String category) throws DbException {
+	public void saveCategorys(int id, String category) throws DbException {
 		
 			String sql = "insert into categorys (category_id,category_name) values (?,?)"; 
 			try(Connection con = TestConnection.getConnection();
@@ -32,14 +32,10 @@ public class PrimeCategorysImp implements CategoryDAO {
 			catch (SQLException e1) {
 				throw new DbException(InfoMessages.ADDCATEGORY);
 			} 
-			 catch (Exception e1) {
-					throw new DbException(InfoMessages.CONNECTION);
-				}
-		
 	}
 
 
-	public ArrayList<Categorys> getcategorys() throws DbException {
+	public ArrayList<Categorys> findAllCategorys() throws DbException {
 		
 			String sql = "select * from categorys"; 
 			try(Connection con = TestConnection.getConnection();
@@ -63,10 +59,7 @@ public class PrimeCategorysImp implements CategoryDAO {
 			catch (SQLException e1) {
 				throw new DbException(InfoMessages.VIEWCATEGORY);
 			} 
-			 catch (Exception e1) {
-					throw new DbException(InfoMessages.CONNECTION);
-				}
-		
+
 		
 		
 			
@@ -85,9 +78,7 @@ public class PrimeCategorysImp implements CategoryDAO {
 		catch (SQLException e1) {
 			throw new DbException(InfoMessages.DELETECATEGORY);
 		} 
-		 catch (Exception e1) {
-				throw new DbException(InfoMessages.CONNECTION);
-			}
+
 	}
 
 	public void updateCategory(int categoryid,String categoryname) throws DbException {
@@ -101,9 +92,6 @@ public class PrimeCategorysImp implements CategoryDAO {
 		catch (SQLException e1) {
 			throw new DbException(InfoMessages.UPDATECATEGORY);
 		} 
-		 catch (Exception e1) {
-				throw new DbException(InfoMessages.CONNECTION);
-			}
 	}
 
 

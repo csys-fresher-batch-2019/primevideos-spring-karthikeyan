@@ -1,9 +1,7 @@
-<%@page import="com.chainsys.primevideos.service.ServicePlans"%>
 <%@page import="com.chainsys.primevideos.model.Plan"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -47,13 +45,10 @@
 
 </head>
 <body>
-	<jsp:include page="nav.jsp"></jsp:include>
+	<jsp:include page="Index1.jsp"></jsp:include>
 	<div class="gfg">
 		Prime Videos Plans
 	</div>
-	<%
-		ArrayList<Plan> list = (ArrayList) request.getAttribute("plans");
-	%>
 	<center>
 		<table id=customers>
 			<thead>
@@ -68,8 +63,7 @@
 				</thead>
 				
 				<tbody>
-				<c:set var="list" value="<%=list%>" ></c:set>
-				<c:forEach items="${list}" var="l" varStatus="i">				
+				<c:forEach items="${plans}" var="l" varStatus="i">				
 				<tr>
 					<td>${i.index+1}</td>
 					<td>${l.planId}</td>

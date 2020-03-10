@@ -6,7 +6,7 @@ public class InfoMessages {
 	    throw new IllegalStateException("Utility class");
 	  }
    public static final String CONNECTION = "Unable to Establih Connection 'SERVER ERROR'";  
-   public static final String ADPLAN="Unable To Add Plan";
+   public static final String ADDPLAN="Unable To Add Plan";
    public static final String VIEWPLAN= "Unable To View Plans";
    public static final String DELETEPLAN= "Unable To Delete a Plan";
    public static final String UPDATEPLAN= "Unable To Update a Plan";

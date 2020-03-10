@@ -6,6 +6,6 @@ import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.model.Plan;
 
 public interface PrimePlanDAO {
-	ArrayList<Plan> list() throws DbException;
+	ArrayList<Plan> findPlans() throws DbException;
 
 }

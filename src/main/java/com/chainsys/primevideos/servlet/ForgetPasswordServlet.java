@@ -29,7 +29,7 @@ public class ForgetPasswordServlet extends HttpServlet {
 		//UserCreditsImp user1 = new UserCreditsImp();
 		ServiceUserCredits user1 = new ServiceUserCredits();		
 		try {
-			boolean a = user1.userLogin(mail);
+			boolean a = user1.existMailId(mail);
 			if (a == true)
 			{
 				HttpSession session = request.getSession();

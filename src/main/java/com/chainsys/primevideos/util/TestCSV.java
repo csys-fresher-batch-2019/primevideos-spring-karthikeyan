@@ -65,7 +65,7 @@ public class TestCSV {
 			
 			as.setOriginals(or);
 			
-			asa.insertMovies(as);
+			asa.saveMovies(as);
 			
 		}
 		

@@ -35,9 +35,9 @@ public class OtpServlet extends HttpServlet {
 		String password = (String) session.getAttribute("PasswordRegister");
 		if (Otp1 == OTP11) {
 			try {
-				boolean result = user1.insertSignUp1(username, mail, password);
+				boolean result = user1.saveUserSignUp(username, mail, password);
 				if (result) {
-					RequestDispatcher d = request.getRequestDispatcher("search.jsp");
+					RequestDispatcher d = request.getRequestDispatcher("Index1.jsp");
 					d.forward(request, response);
 				}
 			} catch (DbException e) {

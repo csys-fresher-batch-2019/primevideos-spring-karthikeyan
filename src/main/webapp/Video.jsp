@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html>
 <head>
 <link rel="stylesheet"
@@ -74,10 +76,10 @@ video {
 	<%
 		String moviename = (String) request.getParameter("movien");
 	%>
-	<jsp:include page="nav.jsp"></jsp:include>
+	<jsp:include page="Index1.jsp"></jsp:include>
 	<div class="header1">
 		<h2 style="color: white; font-size: 200%">
-			<p><%=moviename%></p>
+			<p><%=moviename %></p>
 		</h2>
 	</div>
 
@@ -85,7 +87,7 @@ video {
 
 		<div class="columnA">
 			<video width="1366" controls>
-				<source src="asserts/videos/<%=moviename%>.mp4" type="video/mp4">
+				<source src="asserts/videos/<%=moviename %>.mp4" type="video/mp4">
 			<p>Your browser does not support HTML5 video.</p>
 			</video>
 

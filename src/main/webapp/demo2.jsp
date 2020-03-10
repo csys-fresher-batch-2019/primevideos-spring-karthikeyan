@@ -1,126 +1,196 @@
-<%@page import="com.chainsys.primevideos.imp.PrimeReleasesDAOImp"%>
-<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.chainsys.primevideos.model.PrimeReleases"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>CSS Website Layout</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-	margin: 0;
-}
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Search Result</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="js/like-dislike.js"></script>
+</head>
 
-/* Style the header */
+<style>
+
+<style>
+.left{
+float:left;
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 20px;
+padding-bottom: px;
+}
+.cent{
+float:
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 20px;
+padding-bottom: 60px;
+}
+.right{
+float:right;
+
+* {
+	box-sizing: border-box;
+}
+/* CSS property for header section */
 .header {
-	background-color: WHITE;
-	padding: 20px;
+	background-color: orange;
+	padding: 15px;
 	text-align: center;
 }
-
-.gfg1 {
-	font-size: 30px;
+.header1 {
+	background-color: transparent;
+	text-align: center;
+	padding: 10px;
+	font-size: 10px;
+}
+/* CSS property for nevigation menu */
+.nav_menu {
+	overflow: hidden;
+	background-color: tomato;
+}
+.nav_menu a {
+	float: left;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+.nav_menu a:hover {
+	background-color: white;
+	color: green;
+}
+.gfg {
+	font-size: 40px;
 	color: Green;
 	font-weight: bold;
-	text-align: centre;
+	text-align: center;
 }
-
-.gfg {
+.gfg3 {
 	font-size: 20px;
-	color: Red;
+	color: Green;
 	font-weight: bold;
-	text-align: left;
+	text-align: center;
 }
-
-.column {
+.left {
 	float: left;
-	width: 33.33%;
-	padding: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: px;
 }
-
-/* Clear floats after the columns */
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
+.cent {
+	float: padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	padding-bottom: 60px;
 }
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width:600px) {
-	.column {
-		width: 100%;
-	}
-	.left {
-		float: left;
-		padding-left: 20px;
-		padding-right: 20px;
-		padding-top: 20px;
-		padding-bottom: px;
-	}
-	.cent {
-		float: padding-left: 20px;
-		padding-right: 20px;
-		padding-top: 20px;
-		padding-bottom: 60px;
-	}
-	.right {
-		float: right;
-	}
-	body {
-		background-image: url('asserts/download.png');
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: cover;
-	}
+.right {
+	float: right;
+}
+h6 {
+	color: green;
+	text-align: centre;
+	font-size: 40%;
+}
+body {
+	background-image: url('asserts/back.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+.like, .dislike {
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: right;
+	cursor: pointer;
+	background: transparent;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	border-radius: 4px;
+}
+.qty1, .qty2 {
+	border: none;
+	width: 20px;
+	background: transparent;
 }
 </style>
-</head>
 <body>
-	<form>
+	<jsp:include page="search.jsp"></jsp:include>
+
+	<%
+		ArrayList<PrimeReleases> list = (ArrayList) request.getAttribute("movies");
+	%>
+
+	<div>
 		<%
-			ArrayList<PrimeReleases> cd = (ArrayList) request.getAttribute("details");
-			for (PrimeReleases as : cd) {
+			if (list != null) {
 		%>
-		<div class="header">
-			<div class="gfg1">
-				<h1><%=as.getNameofVideo()%></h1>
-			</div>
-		</div>
-		<div class="row">
-			<div class="leftcolumn">
-				<div class="card">
-					<div class="card" style="width: 10rem; height: 15rem">
-						<img src="asserts/<%=as.getNameofVideo()%>.jpg"
-							class="card-img-top" alt="<%=as.getNameofVideo()%>">
+		<%
+			for (PrimeReleases cd1 : list) {
+		%>
+		<div class="left">
+			<div class="card-desk" class="left">
+				<div class="card" style="width: 15rem; height: 30rem">
+					<a href="ViewMoviesServlet?id=<%=cd1.getPrimeId()%>"> <img
+						src="asserts/<%=cd1.getNameofVideo()%>.jpg" class="card-img-top"
+						alt="<%=cd1.getNameofVideo()%>"></a>
+					<div class="card-body">
+						<div class="gfg">
+							<h6 class="card-text">
+								<centre>PrimeId:<%=cd1.getPrimeId()%></centre>
+							</h6>
+							
+						</div>
+						<div class="gfg">
+							<h6 class="card-text">
+								<centre>Genre:<%=cd1.getGenre()%></centre>
+							</h6>
+							
+						</div>
+						<div class="gfg">
+							<h6 class="card-number">
+							<centre>IMDB:<%=cd1.getImdbRating()%></centre>
+							</h6>
+							
+						</div>
+						<div class="gfg">
+							<h6>
+								<i class="fa fa-thumbs-o-up"><%=cd1.getTlikes()%></i> 
+								<i class="fa fa-thumbs-o-down"><%=cd1.getTdislikes()%></i>
+							</h6>
+							
+
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div></div>
-		<div class="column">
-			<div class="gfg">
-				<h6><%=as.getPrimeId()%></h6>
-				<h6><%=as.getCategoryId()%></h6>
-				<h6><%=as.getGenre()%></h6>
-				<h6><%=as.getAudioLanguages()%></h6>
-				<h6><%=as.getDirector()%></h6>
-				<h6><%=as.getCasting()%></h6>
-				<h6><%=as.getAudioLanguages()%></h6>
-				<h6><%=as.getImdbRating()%></h6>
-				<h6><%=as.getBoxofficecollectionuinmillions()%></h6>
-				<h6><%=as.getDescriptionofvideo()%></h6>
-			</div>
-		</div>
-		</div>
-		<%
-			}
-		%>
-
-
+	</div>
+	<%
+		}
+	%>
+	<%
+		}
+	%>
+	</div>
 	</form>
 </body>
 </html>

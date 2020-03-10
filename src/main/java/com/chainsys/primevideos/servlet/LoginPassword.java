@@ -27,14 +27,14 @@ public class LoginPassword extends HttpServlet {
 		//UserCreditsImp user1 = new UserCreditsImp();
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
-			String Pass = user1.password(mail);
+			String Pass = user1.findUserPassword(mail);
 			if (Pass.equals(password))
 			{
-				String username = user1.userName(mail);
+				String username = user1.findUserName(mail);
 				session.setAttribute("username", username);
 				session.setAttribute("Usermail",mail);
 				System.out.println(username);
-				response.sendRedirect("search.jsp");
+				response.sendRedirect("Index1.jsp");
 			}
 			else
 			{

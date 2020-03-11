@@ -116,13 +116,13 @@ head
 
 			<div class="columnA">
 				<a href="ViewMoviesServlet?id=${l.primeId}"> <img
-					src="asserts/${l.nameofVideo}.jpg" width="300" height="300"
-					alt="${l.nameofVideo}"></a>
+					src="asserts/${l.nameOfVideo}.jpg" width="300" height="300"
+					alt="${l.nameOfVideo}"></a>
 			</div>
 
 			<div class="columnB">
 				<p>Prime ID :${l.primeId}</p>
-				<p>Movie :${l.nameofVideo}</p>
+				<p>Movie :${l.nameOfVideo}</p>
 			</div>
 		</div>
 	</c:forEach>

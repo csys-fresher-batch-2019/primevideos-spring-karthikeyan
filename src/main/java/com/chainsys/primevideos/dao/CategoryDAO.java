@@ -1,9 +1,9 @@
 package com.chainsys.primevideos.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.model.Categorys;
+import com.chainsys.primevideos.model.Category;
 
 public interface CategoryDAO {
 
@@ -13,7 +13,7 @@ public interface CategoryDAO {
 
 	void deleteCategorys(int categoryId) throws  DbException;
 
-	ArrayList<Categorys> findAllCategorys() throws DbException;
+	List<Category> findAllCategorys() throws DbException;
 	
 	
 }

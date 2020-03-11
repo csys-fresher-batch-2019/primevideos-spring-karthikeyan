@@ -14,7 +14,7 @@ import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.service.ServiceUserCredits;
 import com.chainsys.primevideos.util.Logger;
 import com.chainsys.primevideos.util.OTPUtil;
-import com.chainsys.primevideos.util.TestConformEmail;
+import com.chainsys.primevideos.util.EmailMessages;
 @WebServlet("/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +29,12 @@ public class SignUpServlet extends HttpServlet {
 		//UserCreditsImp user1 = new UserCreditsImp();
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
-			boolean a = user1.existMailId(mail);
+			boolean a = false;
+			try {
+				a = user1.existMailId(mail);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			System.out.println("Servlet - login" + a);
 			if (a == true)
 			{
@@ -43,7 +48,7 @@ public class SignUpServlet extends HttpServlet {
 				session.setAttribute("username", username);
 				session.setAttribute("MailIdRegister", mail);
 				session.setAttribute("PasswordRegister", password);
-				TestConformEmail.otpjsp(otp, mail);
+				EmailMessages.otpjsp(otp, mail);
 				RequestDispatcher d = request.getRequestDispatcher("OTP.jsp");
 				d.forward(request, response);		
 				} }

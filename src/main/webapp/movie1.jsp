@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.chainsys.primevideos.dao.imp.PrimeReleasesDAOImp"%>
 <%@page import="java.util.List"%>
-<%@page import="com.chainsys.primevideos.model.PrimeReleases"%>
+<%@page import="com.chainsys.primevideos.model.PrimeRelease"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -139,22 +139,25 @@ img {
 
 	<div class="nav_menu">
 		<a href="#"><button class="btn"><i class="fa fa-home"></i> Home	</button></a> 
-		<a href="search.jsp"><button class="btn"><i class="fa fa-search"></i>Search	</button></a> 
+		<a href="search.jsp"><button class="btn"><i class="fa fa-search"></i>Search</button></a> 
 		<a href="WatchedListServlet"><button class="btn">Watched Movies</button></a> 
 		<a href="WatchLaterServlet"><button class="btn">WatchLater Movies</button></a> 
-		<a href="plan.jsp"><button class="btn">Prime Plans</button></a>
+		<a href="ForgetPassword.jsp"><button class="btn">Change	Password</button></a> 
+		<a href="PlanServlet"><button class="btn">Prime Plans</button></a> 
+		<a href="LogoutServlet"><button class="btn">SignOut</button></a>
 	</div>
+	
 	<div class="header1">
 		<h2 style="color: white; font-size: 200%">
-			${details.nameofVideo}
+			${details.nameOfVideo}
 		</h2>
 	</div>
 
 	<div class="row">
 
 		<div class="columnA">
-			<img src="asserts/${details.nameofVideo}.jpg" width="300"
-				height="300" alt="${details.nameofVideo}">
+			<img src="asserts/${details.nameOfVideo}.jpg" width="300"
+				height="300" alt="${details.nameOfVideo}">
 		</div>
 
 		<div class="columnB">
@@ -175,15 +178,15 @@ img {
 			<p>
 				Release Date :${details.releaseDate}</p>
 			<p>
-				Prime Release Date :${details.primereleaseDate}</p>
+				Prime Release Date :${details.primeReleaseDate}</p>
 			<p>
-				Box Office :${details.boxofficecollectionuinmillions}</p>
-			<p>${details.descriptionofvideo}</p>
+				Box Office :${details.boxOfficeCollectionInMillions}</p>
+			<p>${details.descriptionOfVideo}</p>
 		</div>
 		<div class="columnC">
 			<p>
 				<a
-					href="Watchinterface?decide=1&movieid=${details.primeId}&movien=${details.nameofVideo}">
+					href="Watchinterface?decide=1&movieid=${details.primeId}&movien=${details.nameOfVideo}">
 					<button class="btn success">
 						<span>Watch Movie </span>
 					</button>
@@ -192,7 +195,7 @@ img {
 			<p>
 			<p>
 				<a
-					href="Watchinterface?decide=2&movieid=${details.primeId}&movien=${details.nameofVideo}">
+					href="Watchinterface?decide=2&movieid=${details.primeId}&movien=${details.nameOfVideo}">
 					<button class="btn success">
 						<span>Watch Later </span>
 					</button>
@@ -211,7 +214,7 @@ img {
 									class="lb-tt-rb"></i> <i class="lb-tt-a"></i></i> <span
 								class="likebtn-icon lb-like-icon">&nbsp;</span> <span
 								class="likebtn-label lb-like-label">Like</span></span> <span
-							class="lb-count" data-count="2">${details.tlikes}</span></span> <span
+							class="lb-count" data-count="2">${details.totalLikes}</span></span> <span
 						class="likebtn-button lb-dislike " id="lb-dislike-0"> <span
 							onclick="LikeBtn.vote(-1, 0, event);" class="lb-a"
 							data-lb_index="0"> <i class="lb-tt lb-tooltip-tt"><i
@@ -220,7 +223,7 @@ img {
 									<i class="lb-tt-m2"></i> <i class="lb-tt-lb"></i> <i
 									class="lb-tt-rb"></i> <i class="lb-tt-a"></i></i> <span
 								class="likebtn-icon lb-dislike-icon">&nbsp;</span></span> <span
-							class="lb-count" data-count="0">${details.tdislikes}</span></span></span>
+							class="lb-count" data-count="0">${details.totalDislikes}</span></span></span>
 				</span>
 			</p>
 		</div>

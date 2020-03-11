@@ -19,9 +19,9 @@ import org.springframework.stereotype.Component;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
 @Component
- public class MailUtil1
+ public class MailUtil
 {  
-	 private MailUtil1() {
+	 private MailUtil() {
 	 }
 	 static Logger logger = new Logger();
 	 private static Session getProperties() {

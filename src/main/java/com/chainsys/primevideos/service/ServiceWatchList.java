@@ -1,13 +1,13 @@
 package com.chainsys.primevideos.service;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.chainsys.primevideos.dao.WatchListDAO;
 import com.chainsys.primevideos.dao.imp.WatchListDAOImpl;
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.model.PrimeReleases;
+import com.chainsys.primevideos.model.PrimeRelease;
 @Service
 public class ServiceWatchList {
 	private WatchListDAO watch = new WatchListDAOImpl();
@@ -28,11 +28,11 @@ public class ServiceWatchList {
 		return watch.updateWatched(mailId, primeId, decide);
 	}
 
-	public ArrayList<PrimeReleases> findOneWatched(String MailId) throws DbException{
+	public List<PrimeRelease> findOneWatched(String MailId) throws DbException{
 		return watch.findOneWatched(MailId);
 	}
 
-	public ArrayList<PrimeReleases> findOneWatchLater(String MailId) throws DbException{
+	public List<PrimeRelease> findOneWatchLater(String MailId) throws DbException{
 		return watch.findOneWatchLater(MailId);
 	}
 

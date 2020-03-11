@@ -7,7 +7,7 @@ import lombok.ToString;
 @Data
 @ToString
 @NoArgsConstructor
-public class Categorys {
+public class Category {
 	
 	private int categoryId;
 	private String categoryName;	

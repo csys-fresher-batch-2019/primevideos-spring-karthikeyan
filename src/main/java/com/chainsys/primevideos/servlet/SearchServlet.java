@@ -13,14 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.model.PrimeReleases;
+import com.chainsys.primevideos.model.PrimeRelease;
 import com.chainsys.primevideos.service.ServiceReleases;
 
-@WebServlet("/searchServlet")
-public class searchServlet extends HttpServlet {
+@WebServlet("/SearchServlet")
+public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public searchServlet() {
+	public SearchServlet() {
 		super();
 	}
 
@@ -28,8 +28,8 @@ public class searchServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// PrimeReleasesDAOImp a = new PrimeReleasesDAOImp();
 		ServiceReleases a = new ServiceReleases();
-		PrimeReleases as = new PrimeReleases();
-		List<PrimeReleases> list = new ArrayList<PrimeReleases>();
+		PrimeRelease as = new PrimeRelease();
+		List<PrimeRelease> list = new ArrayList<PrimeRelease>();
 		String term = request.getParameter("searchterm");
 		String category = request.getParameter("categorys");
 		int categorys = Integer.parseInt(category);
@@ -44,7 +44,7 @@ public class searchServlet extends HttpServlet {
 		if (original == "on") {
 			originals = true;
 		}
-		as.setNameofVideo(term);
+		as.setNameOfVideo(term);
 		as.setCategoryId(categorys);
 		as.setGenre(genre);
 		as.setImdbRating(imdbrating);

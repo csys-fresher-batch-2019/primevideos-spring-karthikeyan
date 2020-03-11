@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page import="com.chainsys.primevideos.model.PrimeReleases"%>
+<%@page import="com.chainsys.primevideos.model.PrimeRelease"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.List"%>
@@ -102,13 +102,13 @@ body {
 			<div class="card-desk" class="left">
 	<div class="card" style="width: 18rem; height: 40rem">
 	<a href="ViewMoviesServlet?id=${l.primeId}"> 
-  <img src="asserts/${l.nameofVideo}.jpg"  class="card-img-top"  alt="${l.nameofVideo}"></a>
+  <img src="asserts/${l.nameOfVideo}.jpg"  class="card-img-top"  alt="${l.nameOfVideo}"></a>
   <div class="card-body">
     <p class="card-text">PrimeId:${l.primeId}</p>
     <p class="card-text">Genre:${l.genre}</p>
     <p class="card-text">IMDB:${l.imdbRating}</p>
-    <p class="card-text"><i class="fa fa-thumbs-o-up">${l.tlikes}</i> 
-								<i class="fa fa-thumbs-o-down">${l.tdislikes}</i></p>
+    <p class="card-text"><i class="fa fa-thumbs-o-up">${l.totalLikes}</i> 
+								<i class="fa fa-thumbs-o-down">${l.totalDislikes}</i></p>
   </div>
   </div>
   </div>

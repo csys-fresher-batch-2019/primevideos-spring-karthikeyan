@@ -1,4 +1,4 @@
-package com.chainsys.primevideos.util;
+package com.chainsys.primevideos.TestUtil;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.chainsys.primevideos.dao.imp.PrimeReleasesDAOImp;
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.model.PrimeReleases;
+import com.chainsys.primevideos.model.PrimeRelease;
 @Component
 public class TestCSV {
 
@@ -37,18 +37,18 @@ public class TestCSV {
 			String k = s[11];*/
 			String l = s[12];
 			String m = s[13];
-			PrimeReleases as = new PrimeReleases();
+			PrimeRelease as = new PrimeRelease();
 			int id = Integer.parseInt(a);
 			as.setPrimeId(id);
 			int ca = Integer.parseInt(b);
 			as.setCategoryId(ca);
-			as.setNameofVideo(c);			
+			as.setNameOfVideo(c);			
 			as.setGenre(d);
-			as.setDescriptionofvideo(e);
+			as.setDescriptionOfVideo(e);
 			as.setDirector(f);
 			as.setCasting(g);
 			int hh = Integer.parseInt(h);
-			as.setBoxofficecollectionuinmillions(hh);
+			as.setBoxOfficeCollectionInMillions(hh);
 			int imdb = Integer.parseInt(i);
 			as.setImdbRating(imdb);		
 			/*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yy");      

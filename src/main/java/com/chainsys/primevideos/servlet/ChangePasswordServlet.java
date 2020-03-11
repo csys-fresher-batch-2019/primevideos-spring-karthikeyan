@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.chainsys.primevideos.exception.DbException;
+import com.chainsys.primevideos.exception.ServiceException;
 import com.chainsys.primevideos.service.ServiceUserCredits;
 
 @WebServlet("/ChangePasswordServlet")
@@ -21,7 +21,6 @@ public class ChangePasswordServlet extends HttpServlet {
         super();
     }
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//UserCreditsImp user = new UserCreditsImp();
 		ServiceUserCredits user = new ServiceUserCredits();
 		HttpSession session = request.getSession();
 		String mail = (String) session.getAttribute("Usermail");
@@ -35,12 +34,10 @@ public class ChangePasswordServlet extends HttpServlet {
 					RequestDispatcher d = request.getRequestDispatcher("LoginMailId.jsp");
 					d.forward(request, response);
 				}
-			} catch (DbException e) {
+			} catch (ServiceException e) {
 				e.printStackTrace();
 				response.sendRedirect("ChangePassword.jsp");
-				
-			}
 		}
 	
 
-}
+}}

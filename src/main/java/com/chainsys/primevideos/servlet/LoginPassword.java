@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.chainsys.primevideos.exception.DbException;
+import com.chainsys.primevideos.exception.ServiceException;
 import com.chainsys.primevideos.service.ServiceUserCredits;
 import com.chainsys.primevideos.util.Logger;
 @WebServlet("/LoginPassword")
@@ -42,7 +42,7 @@ public class LoginPassword extends HttpServlet {
 				response.sendRedirect("LoginPassword.jsp?result="+error);
 			}
 		}
-		catch (DbException e) {
+		catch (ServiceException e) {
 			Logger.error(e.getMessage());
 		}
 	}

@@ -11,8 +11,8 @@ import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.exception.InfoMessages;
 
 @Component
-public class TestConnection {
-	private TestConnection() {
+public class ConnectionUtil {
+	private ConnectionUtil() {
 	}
 
 	public static Connection getConnection() throws DbException {
@@ -21,9 +21,7 @@ public class TestConnection {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
 			TimeZone.setDefault(TimeZone.getTimeZone("Asia/Kolkata"));
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@13.235.147.120:1521:XE", "karthikeyan",
-					"karthikeyan");
-			// Connection connection =
+			connection = DriverManager.getConnection("jdbc:oracle:thin:@13.235.147.120:1521:XE", "karthikeyan","karthikeyan");
 			// DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","oracle");
 
 		} catch (ClassNotFoundException | SQLException e) {

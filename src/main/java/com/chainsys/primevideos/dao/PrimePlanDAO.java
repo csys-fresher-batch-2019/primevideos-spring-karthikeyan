@@ -1,11 +1,11 @@
 package com.chainsys.primevideos.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.model.Plan;
 
 public interface PrimePlanDAO {
-	ArrayList<Plan> findPlans() throws DbException;
+	List<Plan> findPlans() throws DbException;
 
 }

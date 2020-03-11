@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.model.PrimeReleases;
+import com.chainsys.primevideos.model.PrimeRelease;
 import com.chainsys.primevideos.service.ServiceReleases;
 
 @WebServlet("/ViewMoviesServlet")
@@ -30,7 +30,7 @@ public class ViewMoviesServlet extends HttpServlet {
 		System.out.println(id);
 		int id1 = Integer.parseInt(id);
 		ServiceReleases prime = new ServiceReleases();
-		PrimeReleases primeReleases = new PrimeReleases();
+		PrimeRelease primeReleases = new PrimeRelease();
 		try {
 			primeReleases = prime.findOneMovieDetails(id1);
 			request.setAttribute("details", primeReleases);

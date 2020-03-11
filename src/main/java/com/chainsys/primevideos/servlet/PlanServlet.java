@@ -1,7 +1,7 @@
 package com.chainsys.primevideos.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,7 +25,7 @@ public class PlanServlet extends HttpServlet {
 		ServicePlans as = new ServicePlans();
 		try {
 			HttpSession session = request.getSession();
-			ArrayList<Plan> list  = as.findPlans();
+			List<Plan> list  = as.findPlans();
 			System.out.println(list);
 			session.setAttribute("plans", list);
 			RequestDispatcher dispatcher=request.getRequestDispatcher("plan.jsp");

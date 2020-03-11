@@ -138,7 +138,7 @@ head
 <body style="text-align: centre">
 	<jsp:include page="Index1.jsp"></jsp:include>
 	<div class="gfg">Prime Video Search</div>
-	<form action="searchServlet">
+	<form action="SearchServlet">
 
 		<div class="container">
 

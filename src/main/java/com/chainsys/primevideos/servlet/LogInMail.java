@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.chainsys.primevideos.exception.DbException;
+import com.chainsys.primevideos.exception.ServiceException;
 import com.chainsys.primevideos.service.ServiceUserCredits;
 import com.chainsys.primevideos.util.Logger;
 @WebServlet("/LogInMail")
@@ -21,7 +21,6 @@ public class LogInMail extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mail=request.getParameter("email");		
-		//UserCreditsImp user1 = new UserCreditsImp();
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
 			boolean a = user1.existMailId(mail);
@@ -37,7 +36,7 @@ public class LogInMail extends HttpServlet {
 				String error = "UserMail Does Not Exists";
 				response.sendRedirect("LoginMailId.jsp?result="+error);
 				} }
-			catch (DbException e) {
+			catch (ServiceException e) {
 				Logger.error(e.getMessage());
 			}
 			}

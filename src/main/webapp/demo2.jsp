@@ -1,5 +1,5 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.chainsys.primevideos.model.PrimeReleases"%>
+<%@page import="com.chainsys.primevideos.model.PrimeRelease"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.List"%>
@@ -136,7 +136,7 @@ body {
 	<jsp:include page="search.jsp"></jsp:include>
 
 	<%
-		ArrayList<PrimeReleases> list = (ArrayList) request.getAttribute("movies");
+		ArrayList<PrimeRelease> list = (ArrayList) request.getAttribute("movies");
 	%>
 
 	<div>
@@ -144,7 +144,7 @@ body {
 			if (list != null) {
 		%>
 		<%
-			for (PrimeReleases cd1 : list) {
+			for (PrimeRelease cd1 : list) {
 		%>
 		<div class="left">
 			<div class="card-desk" class="left">

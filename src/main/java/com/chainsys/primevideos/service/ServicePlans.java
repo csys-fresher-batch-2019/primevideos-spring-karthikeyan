@@ -1,6 +1,6 @@
 package com.chainsys.primevideos.service;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -12,9 +12,9 @@ import com.chainsys.primevideos.model.Plan;
 @Service
 public class ServicePlans {
 
-	private PrimePlanDAO Plans = new PrimePlanDAOImpl();
+	PrimePlanDAO plans = new PrimePlanDAOImpl();
 
-	public ArrayList<Plan> findPlans() throws DbException {
-		return Plans.findPlans();
+	public List<Plan> findPlans() throws DbException {
+		return plans.findPlans();
 	}
 }

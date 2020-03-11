@@ -1,7 +1,7 @@
 package com.chainsys.primevideos.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.model.PrimeReleases;
+import com.chainsys.primevideos.model.PrimeRelease;
 import com.chainsys.primevideos.service.ServiceWatchList;
 @WebServlet("/WatchLaterServlet")
 public class WatchLaterServlet extends HttpServlet {
@@ -24,7 +24,7 @@ public class WatchLaterServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String mail = (String)session.getAttribute("Usermail");		
 		ServiceWatchList wa = new ServiceWatchList();
-		ArrayList<PrimeReleases> list ;
+		List<PrimeRelease> list ;
 		try {
 			list =  wa.findOneWatchLater(mail);
 			System.out.println(list);

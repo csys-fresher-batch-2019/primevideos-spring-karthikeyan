@@ -1,21 +1,22 @@
-package com.chainsys.primevideos.util;
+package com.chainsys.primevideos.TestUtil;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Component;
 
 import com.chainsys.primevideos.dao.imp.PrimePlanDAOImpl;
 import com.chainsys.primevideos.model.Plan;
+import com.chainsys.primevideos.util.Logger;
 @Component
 public class TestExportPlan {
 	static Logger logger = new Logger();
 	public static void main(String[] args) throws Exception {
 		PrimePlanDAOImpl imp = new PrimePlanDAOImpl();
-		ArrayList<Plan> e = imp.findPlans();
+		List<Plan> e = imp.findPlans();
 		String filecontents = "";
 		StringBuilder bld = new StringBuilder();
 		for(Plan ae : e)

@@ -4,11 +4,6 @@ import java.security.SecureRandom;
 import org.springframework.stereotype.Component;
 @Component
 public class OTPUtil {
-	
-	/*public OTPUtil() {
-	    throw new IllegalStateException("Utility class");
-	  }*/
-	
 	public static final SecureRandom rand = new SecureRandom();
 	public static int getOTP() {
 	

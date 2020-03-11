@@ -1,7 +1,7 @@
 package com.chainsys.primevideos.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.chainsys.primevideos.exception.DbException;
-import com.chainsys.primevideos.model.PrimeReleases;
+import com.chainsys.primevideos.model.PrimeRelease;
 import com.chainsys.primevideos.service.ServiceWatchList;
 @WebServlet("/WatchedListServlet")
 public class WatchedListServlet extends HttpServlet {
@@ -25,7 +25,7 @@ public class WatchedListServlet extends HttpServlet {
 		String mail = (String)session.getAttribute("Usermail");		
 		//WatchListDAOImp wa = new WatchListDAOImp();
 		ServiceWatchList wa = new ServiceWatchList();
-		ArrayList<PrimeReleases> list ;
+		List<PrimeRelease> list ;
 		try {
 			list =  wa.findOneWatched(mail);
 			System.out.println(list);

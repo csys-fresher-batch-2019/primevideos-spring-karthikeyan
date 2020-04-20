@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title>Likes and Dislikes</title>
+</head>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script
@@ -28,13 +30,13 @@
 	background: transparent;
 }
 </style>
-</head>
+
 <body>
 
 	<div class="container">
-		<a class="like"><i class="fa fa-thumbs-o-up"></i> Like <input
+		<a class="like"><em class="fa fa-thumbs-o-up"></em> Like <input
 			class="qty1" name="qty1" readonly="readonly" type="text" value="100" />
-		</a> <a class="dislike"><i class="fa fa-thumbs-o-down"></i> Dislike <input
+		</a> <a class="dislike"><em class="fa fa-thumbs-o-down"></em> Dislike <input
 			class="qty2" name="qty2" readonly="readonly" type="text" value="0" />
 		</a>
 	</div>

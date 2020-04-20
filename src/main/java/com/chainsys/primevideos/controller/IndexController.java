@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
-	@RequestMapping("/")
+	@RequestMapping("/Index")
 	public String index() {
 		logger.info("this is a info message");
 		logger.warn("this is a warn message");

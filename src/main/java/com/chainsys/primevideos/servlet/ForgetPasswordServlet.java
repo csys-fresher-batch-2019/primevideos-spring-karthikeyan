@@ -24,14 +24,13 @@ public class ForgetPasswordServlet extends HttpServlet {
 	public ForgetPasswordServlet() {
 		super();
 	}
-
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String mail = request.getParameter("email");
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
-			boolean a = user1.existMailId(mail);
-			if (a == true) {
+			if (user1.existMailId(mail)) {
 				HttpSession session = request.getSession();
 				int otp = OTPUtil.getOTP();
 				session.setAttribute("OTPass", otp);

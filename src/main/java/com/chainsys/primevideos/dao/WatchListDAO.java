@@ -15,8 +15,8 @@ public interface WatchListDAO {
 
 	boolean updateWatched(String mailId, int primeId, int decide) throws DbException;
 	
-	List<PrimeRelease> findOneWatched(String MailId) throws DbException;
+	List<PrimeRelease> findOneWatched(String mailId) throws DbException;
 	
-	List<PrimeRelease> findOneWatchLater(String MailId) throws DbException;
+	List<PrimeRelease> findOneWatchLater(String mailId) throws DbException;
 	
 }

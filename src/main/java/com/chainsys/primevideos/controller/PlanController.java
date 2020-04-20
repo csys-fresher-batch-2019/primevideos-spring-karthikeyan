@@ -1,6 +1,5 @@
 package com.chainsys.primevideos.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +15,9 @@ import com.chainsys.primevideos.model.Plan;
 public class PlanController {
 
 	@GetMapping("/primeplans")
-	public List<Plan> primePlans() throws DbException, ClassNotFoundException {
+	public List<Plan> primePlans() throws DbException{
 		PrimePlanDAOImpl plan = new PrimePlanDAOImpl();
-		List<Plan> plans = new ArrayList<>();
+		List<Plan> plans ;
 		plans = plan.findPlans();
 		return plans;
 	}

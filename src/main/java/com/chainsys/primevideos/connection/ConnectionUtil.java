@@ -19,17 +19,14 @@ public class ConnectionUtil {
 		Connection connection = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-
 			TimeZone.setDefault(TimeZone.getTimeZone("Asia/Kolkata"));
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@13.235.147.120:1521:XE", "karthikeyan","karthikeyan");
-			// DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","oracle");
+			//connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","oracle");
 
 		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-			throw new DbException(InfoMessages.CONNECTION);
+			throw new DbException(InfoMessages.CONNECTION,e);
 			
 		}
-
 		return connection;
 
 	}

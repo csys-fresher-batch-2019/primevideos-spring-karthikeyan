@@ -1,6 +1,5 @@
 package com.chainsys.primevideos.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +14,9 @@ import com.chainsys.primevideos.model.Category;
 @RequestMapping("api")
 public class CategoryController {
 	@GetMapping("/primeCategorys")
-	public List<Category> list() throws DbException, ClassNotFoundException {
+	public List<Category> list() throws DbException{
 		CategorysDAOImpl category =  new CategorysDAOImpl();
-		List<Category> categorys = new ArrayList<>();
+		List<Category> categorys ;
 		categorys = category.findAllCategorys();
 		return categorys;
 	}

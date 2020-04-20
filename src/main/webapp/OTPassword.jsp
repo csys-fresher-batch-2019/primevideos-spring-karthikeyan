@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
-<html>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>Verify OTP</title>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -48,20 +51,14 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 }
-</
-head
->
 </style>
 <body style="text-align: center">
 	<div class="gfg">PrimeVideos</div>
 	<div class="geeks">Destination For Entertainment</div>
 	<div class="gfg">Prime Assitance</div>
-	<%
-		String mail = (String) session.getAttribute("Usermail");
-	%>
 	<h2>Enter the One-Time Password Send To Your MailID</h2>
 	<div class="gfg1">
-		<center><%=mail%></center>
+	<p>${Usermail}</p>
 	</div>
 	<form action="OTPassword" method="post">
 		<label for="otp">Enter OTP</label> <br /> <input type="OTP"

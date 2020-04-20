@@ -11,39 +11,36 @@ import javax.servlet.http.HttpSession;
 
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.service.ServiceWatchList;
+import com.chainsys.primevideos.util.Logger;
 
 @WebServlet("/Watchinterface")
 public class Watchinterface extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private static final String ACTION = "ViewMoviesServlet?id=";  
+	static Logger logger = Logger.getInstance();
 	public Watchinterface() {
 		super();
 	}
-
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String decides = (String) request.getParameter("decide");
+		String decides = request.getParameter("decide");
 		int decide = Integer.parseInt(decides);
 		String mailid = (String) session.getAttribute("Usermail");
-		String prime = (String) request.getParameter("movieid");
-		String moviename = (String) request.getParameter("movien");
-		System.out.println(decides);
-		System.out.println(mailid);
-		System.out.println(prime);
-		System.out.println(moviename);
+		String prime = request.getParameter("movieid");
+		String moviename = request.getParameter("movien");
 		int primeid = Integer.parseInt(prime);
-		//WatchListDAOImp as = new WatchListDAOImp();
 		ServiceWatchList as = new ServiceWatchList();
 		if (decide == 1) {
 
 			try {
 				boolean result = as.updateWatched(mailid, primeid, 1);
-				System.out.println("Result:" + result);
+				logger.info("Result:" + result);
 				if (result) {
 					response.sendRedirect("Video.jsp?movieid=" + prime + "&movien=" + moviename);
 				} else {
-					response.sendRedirect("ViewMoviesServlet?id=" + prime);
+					response.sendRedirect(ACTION + prime);
 				}
 			} catch (DbException e) {
 
@@ -54,11 +51,11 @@ public class Watchinterface extends HttpServlet {
 
 			try {
 				boolean result = as.updateWatched(mailid, primeid, 2);
-				System.out.println("Result:" + result);
+				logger.info("Result:" + result);
 				if (result) {
-					response.sendRedirect("ViewMoviesServlet?id=" + prime);
+					response.sendRedirect(ACTION + prime);
 				} else {
-					response.sendRedirect("ViewMoviesServlet?id=" + prime);
+					response.sendRedirect(ACTION + prime);
 				}
 			} catch (DbException e) {
 

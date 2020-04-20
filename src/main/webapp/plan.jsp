@@ -3,8 +3,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="en">
 <head>
+<title>Plans</title>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <style type="text/css">
 .gfg {
@@ -14,26 +16,26 @@
 	text-align: center;
 }
 
-#customers {
+#plan {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
 }
 
-#customers td, #customers th {
+#plan td, #customers th {
 	border: 1px solid #ddd;
 	padding: 8px;
 }
 
-#customers tr:nth-child(even) {
+#plan tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
 
-#customers tr:hover {
+#plan tr:hover {
 	background-color: #ddd;
 }
 
-#customers th {
+#plan th {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	text-align: left;
@@ -42,28 +44,24 @@
 }
 </style>
 
-
-</head>
 <body>
 	<jsp:include page="Index1.jsp"></jsp:include>
-	<div class="gfg">
-		Prime Videos Plans
-	</div>
-	<center>
-		<table id=customers>
-			<thead>
-				<tr>
-					<th>S.No</th>
-					<th>Plan Id</th>
-					<th>Plan Amount</th>
-					<th>Plan Duration(Days)</th>
-					<th>Screens Count</th>
-					<th>Discount Amount</th>
-				</tr>
-				</thead>
-				
-				<tbody>
-				<c:forEach items="${plans}" var="l" varStatus="i">				
+	<div class="gfg">Prime Videos Plans</div>
+
+	<table id=plan>
+		<thead>
+			<tr>
+				<th>S.No</th>
+				<th>Plan Id</th>
+				<th>Plan Amount</th>
+				<th>Plan Duration(Days)</th>
+				<th>Screens Count</th>
+				<th>Discount Amount</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<c:forEach items="${plans}" var="l" varStatus="i">
 				<tr>
 					<td>${i.index+1}</td>
 					<td>${l.planId}</td>
@@ -72,9 +70,8 @@
 					<td>${l.noOfScreens}</td>
 					<td>${l.discountAmount}</td>
 				</tr>
-				</c:forEach>
-				</tbody>
-		</table>
-	</center>
+			</c:forEach>
+		</tbody>
+	</table>
 </body>
 </html>

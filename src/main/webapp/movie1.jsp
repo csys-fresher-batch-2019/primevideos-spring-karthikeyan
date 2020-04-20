@@ -5,8 +5,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title>Movie Details</title>
+</head>
 <link rel="stylesheet"	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
 <link rel="stylesheet"	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -130,7 +132,7 @@ img {
 	color: white;
 }
 </style>
-</head>
+
 
 <body>
 	<div class="header">
@@ -138,8 +140,8 @@ img {
 	</div>
 
 	<div class="nav_menu">
-		<a href="#"><button class="btn"><i class="fa fa-home"></i> Home	</button></a> 
-		<a href="search.jsp"><button class="btn"><i class="fa fa-search"></i>Search</button></a> 
+		<a href="#"><button class="btn"><em class="fa fa-home"></em> Home	</button></a> 
+		<a href="search.jsp"><button class="btn"><em class="fa fa-search"></em>Search</button></a> 
 		<a href="WatchedListServlet"><button class="btn">Watched Movies</button></a> 
 		<a href="WatchLaterServlet"><button class="btn">WatchLater Movies</button></a> 
 		<a href="ForgetPassword.jsp"><button class="btn">Change	Password</button></a> 
@@ -207,21 +209,21 @@ img {
 					data-identifier="item_1"> <span
 						class="likebtn-button lb-like" id="lb-like-0"> <span
 							onclick="LikeBtn.vote(1, 0, event);" class="lb-a"
-							data-lb_index="0"> <i class="lb-tt lb-tooltip-tt"> <i
-									class="lb-tt-lt"></i> <i class="lb-tt-rt"></i> <i
-									class="lb-tt-m">I like this</i><i class="lb-tt-mu">Unlike</i> <i
-									class="lb-tt-m2"></i> <i class="lb-tt-lb"></i> <i
-									class="lb-tt-rb"></i> <i class="lb-tt-a"></i></i> <span
+							data-lb_index="0"> <em class="lb-tt lb-tooltip-tt"> <em
+									class="lb-tt-lt"></em> <em class="lb-tt-rt"></em> <em
+									class="lb-tt-m">I like this</em><em class="lb-tt-mu">Unlike</em> <em
+									class="lb-tt-m2"></em> <em class="lb-tt-lb"></em> <em
+									class="lb-tt-rb"></em> <em class="lb-tt-a"></em></em> <span
 								class="likebtn-icon lb-like-icon">&nbsp;</span> <span
 								class="likebtn-label lb-like-label">Like</span></span> <span
 							class="lb-count" data-count="2">${details.totalLikes}</span></span> <span
 						class="likebtn-button lb-dislike " id="lb-dislike-0"> <span
 							onclick="LikeBtn.vote(-1, 0, event);" class="lb-a"
-							data-lb_index="0"> <i class="lb-tt lb-tooltip-tt"><i
-									class="lb-tt-lt"></i> <i class="lb-tt-rt"></i><i
-									class="lb-tt-m">I dislike this</i> <i class="lb-tt-mu">Undislike</i>
-									<i class="lb-tt-m2"></i> <i class="lb-tt-lb"></i> <i
-									class="lb-tt-rb"></i> <i class="lb-tt-a"></i></i> <span
+							data-lb_index="0"> <em class="lb-tt lb-tooltip-tt"><em
+									class="lb-tt-lt"></em> <em class="lb-tt-rt"></em><em
+									class="lb-tt-m">I dislike this</em> <em class="lb-tt-mu">Undislike</em>
+									<em class="lb-tt-m2"></em> <em class="lb-tt-lb"></em> <em
+									class="lb-tt-rb"></em> <em class="lb-tt-a"></em></em> <span
 								class="likebtn-icon lb-dislike-icon">&nbsp;</span></span> <span
 							class="lb-count" data-count="0">${details.totalDislikes}</span></span></span>
 				</span>

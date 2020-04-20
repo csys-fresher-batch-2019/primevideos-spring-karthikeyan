@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="javax.servlet.http.HttpSession"%>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>Search Movies</title>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -130,9 +135,6 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 }
-</
-head
->
 </style>
 
 <body style="text-align: centre">
@@ -158,7 +160,8 @@ head
 						<option value=1>TVShows</option>
 						<option value=2>Movies</option>
 						<option value=3>Kids</option>
-					</select> Genre: <select id="genre" name="genre">
+						</select>
+					 Genre: <select id="genre" name="genre">
 						<option value="">ALL</option>
 						<option value="Action">Action</option>
 						<option value="Adventure">Adventure</option>

@@ -1,5 +1,6 @@
 package com.chainsys.primevideos.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.chainsys.primevideos.dao.PrimeReleasesDAO;
 import com.chainsys.primevideos.dao.imp.PrimeReleasesDAOImp;
 import com.chainsys.primevideos.exception.DbException;
+import com.chainsys.primevideos.exception.ServiceException;
 import com.chainsys.primevideos.model.PrimeRelease;
 
 @Service
@@ -22,8 +24,41 @@ public class ServiceReleases {
 		prime.saveMovies(pr);
 	}
 
-	public List<PrimeRelease> findMoviesSearch(PrimeRelease PrimeRelease) throws DbException {
-		return prime.findMoviesSearch(PrimeRelease);
+	public List<PrimeRelease> findMoviesSearch(PrimeRelease primeRelease) throws DbException {
+		return prime.findMoviesSearch(primeRelease);
 	}
+
+	public List<PrimeRelease> findlanguages() throws ServiceException{
+		List<PrimeRelease> ls = new ArrayList<>();
+		try {
+			ls = prime.findlanguages();
+		} catch (DbException e) {
+			throw new ServiceException(e);
+		}
+		return ls;
+	}
+	
+	public List<PrimeRelease> findGenres() throws ServiceException{
+		List<PrimeRelease> ls = new ArrayList<>();
+		try {
+			ls = prime.findGenres();
+		} catch (DbException e) {
+			throw new ServiceException(e);
+		}
+		return ls;
+	
+	}
+	
+	public List<PrimeRelease> findImdbRating() throws ServiceException{
+		List<PrimeRelease> ls = new ArrayList<>();
+		try {
+			ls = prime.findImdbRating();
+		} catch (DbException e) {
+			throw new ServiceException(e);
+		}
+		return ls;
+	}
+	
+	
 
 }

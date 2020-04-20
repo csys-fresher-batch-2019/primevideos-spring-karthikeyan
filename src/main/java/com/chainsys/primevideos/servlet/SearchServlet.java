@@ -1,8 +1,6 @@
 package com.chainsys.primevideos.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -23,13 +21,12 @@ public class SearchServlet extends HttpServlet {
 	public SearchServlet() {
 		super();
 	}
-
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// PrimeReleasesDAOImp a = new PrimeReleasesDAOImp();
 		ServiceReleases a = new ServiceReleases();
 		PrimeRelease as = new PrimeRelease();
-		List<PrimeRelease> list = new ArrayList<PrimeRelease>();
+		List<PrimeRelease> list ;
 		String term = request.getParameter("searchterm");
 		String category = request.getParameter("categorys");
 		int categorys = Integer.parseInt(category);

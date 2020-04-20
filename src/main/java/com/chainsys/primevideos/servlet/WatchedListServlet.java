@@ -14,21 +14,23 @@ import javax.servlet.http.HttpSession;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.model.PrimeRelease;
 import com.chainsys.primevideos.service.ServiceWatchList;
+import com.chainsys.primevideos.util.Logger;
 @WebServlet("/WatchedListServlet")
 public class WatchedListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	static Logger logger = Logger.getInstance();
     public WatchedListServlet() {
         super();
     }
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String mail = (String)session.getAttribute("Usermail");		
-		//WatchListDAOImp wa = new WatchListDAOImp();
 		ServiceWatchList wa = new ServiceWatchList();
 		List<PrimeRelease> list ;
 		try {
 			list =  wa.findOneWatched(mail);
-			System.out.println(list);
+			logger.info(list);
 			request.setAttribute("watchedmovies", list);
 			
 			RequestDispatcher dispatcher=request.getRequestDispatcher("watched.jsp");

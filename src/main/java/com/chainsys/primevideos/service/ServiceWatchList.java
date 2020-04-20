@@ -28,12 +28,12 @@ public class ServiceWatchList {
 		return watch.updateWatched(mailId, primeId, decide);
 	}
 
-	public List<PrimeRelease> findOneWatched(String MailId) throws DbException{
-		return watch.findOneWatched(MailId);
+	public List<PrimeRelease> findOneWatched(String mailId) throws DbException{
+		return watch.findOneWatched(mailId);
 	}
 
-	public List<PrimeRelease> findOneWatchLater(String MailId) throws DbException{
-		return watch.findOneWatchLater(MailId);
+	public List<PrimeRelease> findOneWatchLater(String mailId) throws DbException{
+		return watch.findOneWatchLater(mailId);
 	}
 
 

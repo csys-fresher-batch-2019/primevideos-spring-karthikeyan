@@ -1,7 +1,6 @@
 package com.chainsys.primevideos.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,21 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.model.PrimeRelease;
 import com.chainsys.primevideos.service.ServiceReleases;
+import com.chainsys.primevideos.util.Logger;
 
 @WebServlet("/ViewMoviesServlet")
 public class ViewMoviesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	static Logger logger = Logger.getInstance();
 
 	public ViewMoviesServlet() {
 		super();
 	}
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String id = request.getParameter("id");
-		System.out.println("hello");
-		System.out.println(id);
+		logger.info(id);
 		int id1 = Integer.parseInt(id);
 		ServiceReleases prime = new ServiceReleases();
 		PrimeRelease primeReleases = new PrimeRelease();

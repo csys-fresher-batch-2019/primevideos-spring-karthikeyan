@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>Login Password</title>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -7,7 +10,6 @@
 	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 
 <style>
 .gfg {
@@ -42,9 +44,6 @@ body {
 	margin: 4px 2px;
 	cursor: pointer;
 }
-</
-head
->
 </style>
 <body style="text-align: center">
 	<div class="gfg">PrimeVideos</div>

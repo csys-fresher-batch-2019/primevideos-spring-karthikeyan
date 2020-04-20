@@ -5,10 +5,11 @@
 	pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title>Display Search Result</title>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Search Result</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -17,7 +18,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="js/like-dislike.js"></script>
-</head>
 
 <style>
 
@@ -107,8 +107,8 @@ body {
     <p class="card-text">PrimeId:${l.primeId}</p>
     <p class="card-text">Genre:${l.genre}</p>
     <p class="card-text">IMDB:${l.imdbRating}</p>
-    <p class="card-text"><i class="fa fa-thumbs-o-up">${l.totalLikes}</i> 
-								<i class="fa fa-thumbs-o-down">${l.totalDislikes}</i></p>
+    <p class="card-text"><em class="fa fa-thumbs-o-up">${l.totalLikes}</em> 
+								<em class="fa fa-thumbs-o-down">${l.totalDislikes}</em></p>
   </div>
   </div>
   </div>

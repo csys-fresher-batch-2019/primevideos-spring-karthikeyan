@@ -15,21 +15,23 @@ import com.chainsys.primevideos.util.Logger;
 @WebServlet("/LogInMail")
 public class LogInMail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	static Logger logger = Logger.getInstance();
        
     public LogInMail() {
         super();
     }
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mail=request.getParameter("email");		
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
-			boolean a = user1.existMailId(mail);
-			System.out.println("Servlet - login" + a);
-			if (a == true)
+			
+			if (user1.existMailId(mail))
 			{
+				logger.info("Servlet - login true");
 				HttpSession session = request.getSession();
 				session.setAttribute("Usermail", mail);
-				System.out.println(mail);
+				logger.info(mail);
 				response.sendRedirect("LoginPassword.jsp?mail="+mail+"");
 			}
 			else {

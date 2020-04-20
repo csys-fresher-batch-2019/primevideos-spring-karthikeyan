@@ -15,16 +15,16 @@ public class OTPassword extends HttpServlet {
     public OTPassword() {
         super();
     }
-    
+    @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String OTP1 = (String) request.getParameter("otpuserpass");
-		int Otp1 = Integer.parseInt(OTP1);
+		String otp1 = request.getParameter("otpuserpass");
+		int otp2 = Integer.parseInt(otp1);
 		HttpSession session = request.getSession();
-		int OTP11 = (Integer) session.getAttribute("OTPass");
-	if (Otp1 == OTP11)
+		int otp3 = (Integer) session.getAttribute("OTPass");
+	if (otp2 == otp3)
 	{ 
-		RequestDispatcher d = request.getRequestDispatcher("ChangePassword.jsp");
-		d.forward(request, response);		
+		RequestDispatcher dispatch = request.getRequestDispatcher("ChangePassword.jsp");
+		dispatch.forward(request, response);		
 			
 		
 	}

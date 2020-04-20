@@ -95,10 +95,10 @@ public class WatchListDAOImpl implements WatchListDAO {
 		return false;
 	}
 
-	public List<PrimeRelease> findOneWatched(String MailId) throws DbException {
+	public List<PrimeRelease> findOneWatched(String mailId) throws DbException {
 		String sql = "select prime_id,name_of_video from prime_releases where prime_id IN (select prime_id from watch_lists where mail_id = ? and watched <> 0)";
 		try (Connection con = ConnectionUtil.getConnection(); PreparedStatement pst = con.prepareStatement(sql);) {
-			pst.setString(1, MailId);
+			pst.setString(1, mailId);
 			try (ResultSet rs = pst.executeQuery();) {
 				List<PrimeRelease> l = new ArrayList<>();
 				while (rs.next()) {
@@ -116,10 +116,10 @@ public class WatchListDAOImpl implements WatchListDAO {
 		}
 	}
 
-	public List<PrimeRelease> findOneWatchLater(String MailId) throws DbException {
+	public List<PrimeRelease> findOneWatchLater(String mailId) throws DbException {
 		String sql = "select prime_id,name_of_video from prime_releases where prime_id IN (select prime_id from watch_lists where mail_id = ? and watch_later <> 0)";
 		try (Connection con = ConnectionUtil.getConnection(); PreparedStatement pst = con.prepareStatement(sql);) {
-			pst.setString(1, MailId);
+			pst.setString(1, mailId);
 			try (ResultSet rs = pst.executeQuery();) {
 				List<PrimeRelease> l = new ArrayList<>();
 				while (rs.next()) {

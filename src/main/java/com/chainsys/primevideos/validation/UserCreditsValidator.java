@@ -10,7 +10,7 @@ public class UserCreditsValidator {
 	
 	public void validateMailId(String mailId) throws ValidatorException {
 		if (mailId == null || "".equals(mailId.trim())) {
-			throw new ValidatorException(InfoMessages.VALIDATEEmail);
+			throw new ValidatorException(InfoMessages.VALIDATEEMAIL);
 		}
 	}
 	public void validateSaveUser(String name, String mailId, String password) throws ValidatorException{
@@ -18,7 +18,7 @@ public class UserCreditsValidator {
 			throw new ValidatorException(InfoMessages.VALIDATENAME);
 		}
 		if (mailId == null || "".equals(mailId.trim())) {
-			throw new ValidatorException(InfoMessages.VALIDATEEmail);
+			throw new ValidatorException(InfoMessages.VALIDATEEMAIL);
 		}
 		if (password == null || "".equals(password.trim()) || password.length()<8) {
 			throw new ValidatorException(InfoMessages.VALIDATEPASSWORD);

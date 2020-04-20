@@ -29,32 +29,27 @@ public class CategorysDAOImpl implements CategoryDAO {
 			int row = pst.executeUpdate();
 			logger.info(row);
 		} catch (SQLException e1) {
-			throw new DbException(InfoMessages.ADDCATEGORY,e1);
+			throw new DbException(InfoMessages.ADDCATEGORY, e1);
 		}
 	}
 
 	public List<Category> findAllCategorys() throws DbException {
 
-		String sql = "select category_id,category_name from categorys";
+		String sql = "select category_name from categorys";
 		try (Connection con = ConnectionUtil.getConnection(); PreparedStatement pst = con.prepareStatement(sql);) {
 			try (ResultSet row = pst.executeQuery();) {
 				List<Category> list = new ArrayList<>();
 
 				while (row.next()) {
-					int id = row.getInt("category_id");
 					String name = row.getString("category_name");
-
 					Category category = new Category();
-					category.setCategoryId(id);
 					category.setCategoryName(name);
-
 					list.add(category);
 				}
-
 				return list;
 			}
 		} catch (SQLException e1) {
-			throw new DbException(InfoMessages.VIEWCATEGORY,e1);
+			throw new DbException(InfoMessages.VIEWCATEGORY, e1);
 		}
 
 	}
@@ -66,7 +61,7 @@ public class CategorysDAOImpl implements CategoryDAO {
 			int row = pst.executeUpdate();
 			logger.info(row);
 		} catch (SQLException e1) {
-			throw new DbException(InfoMessages.DELETECATEGORY,e1);
+			throw new DbException(InfoMessages.DELETECATEGORY, e1);
 		}
 
 	}
@@ -79,7 +74,7 @@ public class CategorysDAOImpl implements CategoryDAO {
 			int row = pst.executeUpdate();
 			logger.info(row);
 		} catch (SQLException e1) {
-			throw new DbException(InfoMessages.UPDATECATEGORY,e1);
+			throw new DbException(InfoMessages.UPDATECATEGORY, e1);
 		}
 	}
 

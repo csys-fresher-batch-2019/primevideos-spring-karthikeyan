@@ -15,25 +15,26 @@ import com.chainsys.primevideos.util.Logger;
 @WebServlet("/LoginPassword")
 public class LoginPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	static Logger logger = Logger.getInstance();
     public LoginPassword() {
         super();
     }
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String mail = (String)session.getAttribute("Usermail");
 		String password = request.getParameter("password");
-		System.out.println(mail);
-		System.out.println(password);
-		//UserCreditsImp user1 = new UserCreditsImp();
+		logger.info(mail);
+		logger.info(password);
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
-			String Pass = user1.findUserPassword(mail);
-			if (Pass.equals(password))
+			String pass = user1.findUserPassword(mail);
+			if (pass.equals(password))
 			{
 				String username = user1.findUserName(mail);
 				session.setAttribute("username", username);
 				session.setAttribute("Usermail",mail);
-				System.out.println(username);
+				logger.info(username);
 				response.sendRedirect("Index1.jsp");
 			}
 			else

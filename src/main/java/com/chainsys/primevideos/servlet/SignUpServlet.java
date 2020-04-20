@@ -18,15 +18,15 @@ import com.chainsys.primevideos.util.EmailMessages;
 @WebServlet("/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+	static Logger logger = new Logger();
     public SignUpServlet() {
         super();
     }
+    @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String mail=request.getParameter("email");
 		String password = request.getParameter("npass");
-		//UserCreditsImp user1 = new UserCreditsImp();
 		ServiceUserCredits user1 = new ServiceUserCredits();
 		try {
 			boolean a = false;
@@ -35,7 +35,7 @@ public class SignUpServlet extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			System.out.println("Servlet - login" + a);
+			logger.info("Servlet - login" + a);
 			if (a == true)
 			{
 				String error = "User Mail Already Exists";

@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>Register</title>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -41,9 +43,6 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 }
-</
-head
->
 </style>
 <body style="text-align: center">
 	<div class="gfg">PrimeVideos</div>

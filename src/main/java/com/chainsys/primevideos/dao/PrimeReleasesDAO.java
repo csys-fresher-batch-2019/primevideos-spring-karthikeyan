@@ -11,6 +11,12 @@ public interface PrimeReleasesDAO {
 
 	public void saveMovies(PrimeRelease pr) throws DbException;
 
-	public List<PrimeRelease> findMoviesSearch(PrimeRelease PrimeRelease) throws DbException;
+	public List<PrimeRelease> findMoviesSearch(PrimeRelease primeRelease) throws DbException;
 
+	public List<PrimeRelease> findlanguages() throws DbException;
+	
+	public List<PrimeRelease> findGenres() throws DbException;
+	
+	public List<PrimeRelease> findImdbRating() throws DbException;
 }
+

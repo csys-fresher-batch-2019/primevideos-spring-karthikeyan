@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>Watched Movies</title>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -101,9 +103,6 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 }
-</
-head
->
 </style>
 <body>
 	<jsp:include page="Index1.jsp"></jsp:include>

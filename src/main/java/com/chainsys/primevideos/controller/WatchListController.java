@@ -63,7 +63,7 @@ public class WatchListController {
 	@GetMapping("/watchedMovies")
 	public List<PrimeRelease> findOneWatched(String mailId) throws DbException {
 		WatchListDAOImpl movie = new WatchListDAOImpl();
-		List<PrimeRelease> movies = new ArrayList<>();
+		List<PrimeRelease> movies;
 		movies = movie.findOneWatched(mailId);
 		return movies;
 
@@ -72,7 +72,7 @@ public class WatchListController {
 	@GetMapping("/watchLaterMovies")
 	public List<PrimeRelease> findOneWatchLater(String mailId) throws DbException {
 		WatchListDAOImpl movie = new WatchListDAOImpl();
-		List<PrimeRelease> movies = new ArrayList<>();
+		List<PrimeRelease> movies;
 		movies = movie.findOneWatchLater(mailId);
 		return movies;
 
@@ -81,7 +81,7 @@ public class WatchListController {
 	@GetMapping("/existWatchList")
 	public boolean existWatchList(String mailID, int primeId) throws DbException {
 		WatchListDAOImpl movie = new WatchListDAOImpl();
-		boolean result = movie.existWatchList(mailID, primeId);
-		return result;
+		return movie.existWatchList(mailID, primeId);
+		
 	}
 }

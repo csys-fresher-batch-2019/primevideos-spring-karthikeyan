@@ -21,18 +21,18 @@ public class OtpServlet extends HttpServlet {
 	public OtpServlet() {
 		super();
 	}
-
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ServiceUserCredits user1 = new ServiceUserCredits();
-		String OTP1 = (String) request.getParameter("otpuser");
-		int Otp1 = Integer.parseInt(OTP1);
+		String otp1 = request.getParameter("otpuser");
+		int otp2 = Integer.parseInt(otp1);
 		HttpSession session = request.getSession();
-		int OTP11 = (Integer) session.getAttribute("OTP");
+		int otp3 = (Integer) session.getAttribute("OTP");
 		String username = (String) session.getAttribute("username");
 		String mail = (String) session.getAttribute("MailIdRegister");
 		String password = (String) session.getAttribute("PasswordRegister");
-		if (Otp1 == OTP11) {
+		if (otp2 == otp3) {
 			try {
 				boolean result = user1.saveUserSignUp(username, mail, password);
 				if (result) {

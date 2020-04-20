@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="javax.servlet.http.HttpSession"%>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>Secondary Index Page</title>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -71,8 +74,8 @@ body {
 
 
 	<div class="nav_menu">
-		<a href="#"><button class="btn"><i class="fa fa-home"></i> Home	</button></a> 
-		<a href="search.jsp"><button class="btn"><i class="fa fa-search"></i>Search</button></a> 
+		<a href="#"><button class="btn"><em class="fa fa-home"></em> Home	</button></a> 
+		<a href="search.jsp"><button class="btn"><em class="fa fa-search"></em>Search</button></a> 
 		<a href="WatchedListServlet"><button class="btn">Watched Movies</button></a> 
 		<a href="WatchLaterServlet"><button class="btn">WatchLater Movies</button></a> 
 		<a href="ForgetPassword.jsp"><button class="btn">Change	Password</button></a> 

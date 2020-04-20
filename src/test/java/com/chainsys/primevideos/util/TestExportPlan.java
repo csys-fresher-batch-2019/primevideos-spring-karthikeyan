@@ -1,4 +1,4 @@
-package com.chainsys.primevideos.TestUtil;
+package com.chainsys.primevideos.util;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,26 +11,28 @@ import org.springframework.stereotype.Component;
 import com.chainsys.primevideos.dao.imp.PrimePlanDAOImpl;
 import com.chainsys.primevideos.model.Plan;
 import com.chainsys.primevideos.util.Logger;
+
 @Component
 public class TestExportPlan {
 	static Logger logger = new Logger();
+
 	public static void main(String[] args) throws Exception {
 		PrimePlanDAOImpl imp = new PrimePlanDAOImpl();
 		List<Plan> e = imp.findPlans();
 		String filecontents = "";
 		StringBuilder bld = new StringBuilder();
-		for(Plan ae : e)
-		{
+		for (Plan ae : e) {
 			bld.append(ae.getPlanId()).append(",").append(ae.getPlanDuration());
-			bld.append(",").append(ae.getPlanAmount()).append(",").append(ae.getNoOfScreens()).append(",").append(ae.getDiscountAmount());
+			bld.append(",").append(ae.getPlanAmount()).append(",").append(ae.getNoOfScreens()).append(",")
+					.append(ae.getDiscountAmount());
 		}
-		
-		 filecontents = bld.toString();
+
+		filecontents = bld.toString();
 		logger.info(filecontents);
-		
+
 		Path path = Paths.get("D:\\gre.txt");
-		
-		Files.write(path, filecontents.getBytes(),StandardOpenOption.APPEND );
+
+		Files.write(path, filecontents.getBytes(), StandardOpenOption.APPEND);
 	}
 
 }

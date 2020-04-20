@@ -14,12 +14,15 @@ import javax.servlet.http.HttpSession;
 import com.chainsys.primevideos.exception.DbException;
 import com.chainsys.primevideos.model.PrimeRelease;
 import com.chainsys.primevideos.service.ServiceWatchList;
+import com.chainsys.primevideos.util.Logger;
 @WebServlet("/WatchLaterServlet")
 public class WatchLaterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	static Logger logger = Logger.getInstance();
     public WatchLaterServlet() {
         super();
     }
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String mail = (String)session.getAttribute("Usermail");		
@@ -27,7 +30,7 @@ public class WatchLaterServlet extends HttpServlet {
 		List<PrimeRelease> list ;
 		try {
 			list =  wa.findOneWatchLater(mail);
-			System.out.println(list);
+			logger.info(list);
 			session.setAttribute("watchlatermovies", list);
 			
 			RequestDispatcher dispatcher=request.getRequestDispatcher("Mymovies.jsp");

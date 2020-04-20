@@ -13,22 +13,17 @@ import com.chainsys.primevideos.model.PrimeRelease;
 @RestController
 @RequestMapping("api")
 public class PrimeReleasesController {
-	
+	PrimeReleasesDAOImp releases = new PrimeReleasesDAOImp();
+
 	@GetMapping("/findOneMovieDetails")
-	public PrimeRelease findOneMovieDetails(int id) throws DbException{
-		PrimeReleasesDAOImp releases = new PrimeReleasesDAOImp();
-		@SuppressWarnings("unused")
-		PrimeRelease release = new PrimeRelease();
-		return release = releases.findOneMovieDetails(id);
-		
+	public PrimeRelease findOneMovieDetails(int id) throws DbException {
+		return releases.findOneMovieDetails(id);
+
 	}
-	
+
 	@GetMapping("/findMoviesSearch")
-	public List<PrimeRelease> findMoviesSearch(PrimeRelease PrimeRelease) throws  DbException, ClassNotFoundException {
-		PrimeReleasesDAOImp releases = new PrimeReleasesDAOImp();
-		@SuppressWarnings("unused")
-		PrimeRelease release = new PrimeRelease();
-		return releases.findMoviesSearch(PrimeRelease);
+	public List<PrimeRelease> findMoviesSearch(PrimeRelease primeRelease) throws DbException, ClassNotFoundException {
+		return releases.findMoviesSearch(primeRelease);
 	}
 
 }

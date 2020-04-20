@@ -30,7 +30,7 @@ public class InfoMessages {
 	public static final String MAILSEND = "Mail Cannot Be Send";
 	public static final String OPERATION = "Cannot Able to Perform This Operation";
 	public static final String VALIDATENAME = "UserName Cannot be Empty";
-	public static final String VALIDATEEmail = "Email Cannot be Empty";
+	public static final String VALIDATEEMAIL = "Email Cannot be Empty";
 	public static final String VALIDATEPASSWORD = "Password Must Be Greater Than 8 Charaters";
 	public static final String VALIDATECATEGORYID = "Number Must be Greater then 0";
 	public static final String VALIDATECATEGORYNAME = "CategoryField Cannot Be Empty";

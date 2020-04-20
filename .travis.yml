@@ -1,4 +1,4 @@
-anguage: java
+language: java
 deploy:
   provider: cloudfoundry
   username: bmpdk123@gmail.com  
